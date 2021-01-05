@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import { theme as t } from '../../styles/Theme';
+import Button from '../Button';
 
 const HeroSection = styled.section`
   background-image: url('/scott-graham-5fNmWej4tAA-unsplash.jpg');
   background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 100%;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   width: 100%;
   height: calc(100vh - 10rem);
   display: flex;
@@ -24,29 +26,39 @@ const HeroSection = styled.section`
     width: auto;
     height: auto;
   }
+`;
+
+const CTAText = styled.div`
+  z-index: 2;
+  text-align: center;
+
+  h3 {
+    font-size: 4.5rem;
+    color: ${t.colors.white};
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 auto 2rem;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    max-width: 70%;
+  }
+
+  p {
+    font-size: 2.2rem;
+    color: ${t.colors.white};
+    letter-spacing: 1px;
+    line-height: 1.4;
+    max-width: 60%;
+    margin: auto;
+  }
 
   div {
-    z-index: 2;
-    text-align: center;
+    margin-top: 3rem;
 
-    h3 {
-      font-size: 4.5rem;
-      color: ${t.colors.white};
-      font-weight: 600;
-      text-transform: uppercase;
-      margin: 0 auto 2rem;
-      letter-spacing: 1px;
-      line-height: 1.2;
-      max-width: 70%;
-    }
-
-    p {
-      font-size: 2.2rem;
-      color: ${t.colors.white};
-      letter-spacing: 1px;
-      line-height: 1.4;
-      max-width: 60%;
-      margin: auto;
+    a {
+      &:not(:last-of-type) {
+        margin-right: 1.8rem;
+      }
     }
   }
 `;
@@ -54,14 +66,18 @@ const HeroSection = styled.section`
 export default function Hero() {
   return (
     <HeroSection>
-      <div>
+      <CTAText>
         <h3>Lorem ipsum dolor sit amet</h3>
         <p>
           Nulla dolor ante, posuere a fermentum quis, rutrum eu dui. Ut
           scelerisque ultrices odio quis convallis. Mauris tincidunt, turpis nec
           convallis ullamcorper, mauris nunc vulputate dui
         </p>
-      </div>
+        <div>
+          <Button text='Find your next career' to='jobs' />
+          <Button text='Looking for talent?' to='employers' />
+        </div>
+      </CTAText>
     </HeroSection>
   );
 }
