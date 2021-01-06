@@ -32,7 +32,6 @@ const Btn = styled.a<IBtnProps>`
     switch (props.variant) {
       case 'black':
         return `
-          box-shadow: 0 5px 10px -5px;
           border: 1px solid ${t.colors.lightEbony};
         `;
       default:
