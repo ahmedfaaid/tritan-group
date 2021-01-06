@@ -9,6 +9,7 @@ interface IColors {
   black: string;
   ebony: string;
   darkPrimary: string;
+  lightEbony: string;
 }
 
 declare module 'styled-components' {

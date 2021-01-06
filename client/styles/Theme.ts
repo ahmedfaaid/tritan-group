@@ -8,6 +8,7 @@ export const theme: DefaultTheme = {
     offWhite: '#fcfcfc',
     black: '#000000',
     ebony: '#282C35',
-    darkPrimary: '#D9A600'
+    darkPrimary: '#D9A600',
+    lightEbony: '#8C9099'
   }
 };
