@@ -16,7 +16,8 @@ const Navigation = styled.nav`
 `;
 
 const Logo = styled.div`
-  width: 15rem;
+  width: 12rem;
+  margin-left: 2.5rem;
 
   img {
     width: 100%;
@@ -42,7 +43,7 @@ export default function Navbar() {
     <Navigation>
       <Logo>
         <Link href='/'>
-          <img src='/logo.svg' alt='logo' />
+          <img src='/transparent-logo.png' alt='Tritan Group' />
         </Link>
       </Logo>
       <ul>
