@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { theme as t } from '../styles/Theme';
+import FooterContact from './FooterContact';
 
 const Copy = styled.div`
   background-color: ${t.colors.primary};
@@ -27,6 +28,7 @@ const FooterLink = styled.a`
 export default function Footer() {
   return (
     <footer>
+      <FooterContact />
       <Copy>
         <span style={{ color: '#ffffff' }}>
           &#169; {new Date().getFullYear()} Tritan Group. All Rights Reserved.
