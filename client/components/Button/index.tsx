@@ -25,7 +25,7 @@ const Btn = styled.a<IBtnProps>`
   transition: background-color 0.2s;
 
   &:hover {
-    background-color: ${t.colors.darkPrimary};
+    background-color: ${t.colors.lightPrimary};
   }
 
   ${props => {

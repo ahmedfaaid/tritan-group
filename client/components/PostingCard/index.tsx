@@ -48,7 +48,7 @@ const CardTextContainer = styled.div`
   }
 
   a {
-    color: ${t.colors.darkPrimary};
+    color: ${t.colors.blue};
     font-size: 1.6rem;
     text-decoration: none;
     transition: color 0.1s;

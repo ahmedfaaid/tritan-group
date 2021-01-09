@@ -8,7 +8,7 @@ interface IColors {
   offWhite: string;
   black: string;
   ebony: string;
-  darkPrimary: string;
+  lightPrimary: string;
   lightEbony: string;
 }
 
