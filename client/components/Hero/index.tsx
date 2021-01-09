@@ -75,7 +75,11 @@ export default function Hero() {
         </p>
         <div>
           <Button text='Find your next career' to='jobs' />
-          <Button text='Looking for talent?' to='employers' />
+          <Button
+            text='Looking for talent?'
+            to='employers'
+            background='ebony'
+          />
         </div>
       </CTAText>
     </HeroSection>

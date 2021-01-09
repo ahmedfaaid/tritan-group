@@ -5,11 +5,13 @@ import { theme as t } from '../../styles/Theme';
 interface IButtonProps {
   text: string;
   to: string;
-  variant?: string;
+  border?: string;
+  background?: string;
 }
 
 interface IBtnProps {
-  variant?: string;
+  border?: string;
+  background?: string;
 }
 
 const Btn = styled.a<IBtnProps>`
@@ -18,18 +20,13 @@ const Btn = styled.a<IBtnProps>`
   padding: 2rem 0;
   display: inline-block;
   width: 30rem;
-  background-color: ${t.colors.primary};
   color: ${t.colors.white};
   border-radius: 0.5rem;
   cursor: pointer;
   transition: background-color 0.2s;
 
-  &:hover {
-    background-color: ${t.colors.lightPrimary};
-  }
-
   ${props => {
-    switch (props.variant) {
+    switch (props.border) {
       case 'black':
         return `
           border: 1px solid ${t.colors.lightEbony};
@@ -40,12 +37,35 @@ const Btn = styled.a<IBtnProps>`
         `;
     }
   }}
+
+  ${props => {
+    switch (props.background) {
+      case 'ebony':
+        return `
+          background-color: ${t.colors.ebony};
+
+          &:hover {
+            background-color: ${t.colors.lightEbony};
+          }
+        `;
+      default:
+        return `
+          background-color: ${t.colors.primary};
+
+          &:hover {
+            background-color: ${t.colors.lightPrimary};
+          }
+        `;
+    }
+  }}
 `;
 
-export default function Button({ text, to, variant }: IButtonProps) {
+export default function Button({ text, to, border, background }: IButtonProps) {
   return (
     <Link href={`/${to}`}>
-      <Btn variant={variant}>{text.toUpperCase()}</Btn>
+      <Btn border={border} background={background}>
+        {text.toUpperCase()}
+      </Btn>
     </Link>
   );
 }

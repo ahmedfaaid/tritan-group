@@ -61,7 +61,7 @@ export default function FeaturedPostings() {
         ))}
       </div>
       <div style={{ textAlign: 'center', marginTop: '100px' }}>
-        <Button text='View All Postings' to='jobs' variant='black' />
+        <Button text='View All Postings' to='jobs' border='black' />
       </div>
     </FeaturedSection>
   );
