@@ -4,6 +4,15 @@ import Button from '../components/Button';
 import Layout from '../components/layout';
 import StaffCard from '../components/StaffCard';
 import ImageStrip from '../components/ImageStrip';
+import ValuesCard from '../components/ValuesCard';
+
+interface ISectionProps {
+  background?: string;
+}
+
+interface ICardsProps {
+  width?: number;
+}
 
 const AboutText = styled.div`
   width: 60%;
@@ -26,9 +35,21 @@ const AboutText = styled.div`
   }
 `;
 
-const StaffSection = styled.section`
+const CardSection = styled.section<ISectionProps>`
   padding: 3rem 0;
-  background-color: ${t.colors.offWhite};
+  ${props => {
+    switch (props.background) {
+      case 'offWhite':
+        return `
+          background-color: ${t.colors.offWhite};
+        `;
+      default:
+        return `
+          background-color: ${t.colors.white};
+        `;
+    }
+  }}
+  /* background-color: ${t.colors.offWhite}; */
 
   h4 {
     font-size: 3rem;
@@ -68,6 +89,27 @@ export default function About() {
       image: 'wassim-chouak-X1fKWQM-GXY-unsplash.jpg'
     }
   ];
+
+  const values = [
+    {
+      value: 'Professionalism',
+      text:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus, erat et placerat congue, ipsum quam feugiat sapien, at vestibulum quam dui a odio.',
+      image: 'hunters-race-MYbhN8KaaEc-unsplash.jpg'
+    },
+    {
+      value: 'Experts',
+      text:
+        'Donec eget neque at tellus ornare dapibus. Morbi mollis ultricies enim, at bibendum justo. Proin condimentum eget justo at interdum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
+      image: 'alizee-baudez-npJkoTc0P8s-unsplash.jpg'
+    },
+    {
+      value: 'Customer Focus',
+      text:
+        'Sed pretium magna est, in cursus felis suscipit sed. Fusce faucibus est leo, pretium pulvinar mi facilisis nec. Phasellus molestie viverra nunc, sed tincidunt magna aliquam ac.',
+      image: 'blake-wisz-0mZIT-EcH5k-unsplash.jpg'
+    }
+  ];
   return (
     <Layout>
       <section>
@@ -103,14 +145,22 @@ export default function About() {
           </div>
         </AboutText>
       </section>
-      <StaffSection>
+      <CardSection background='offWhite'>
         <h4>Our Staff</h4>
         <Cards>
           {staff.map(({ image, name, title }) => (
             <StaffCard image={image} name={name} title={title} />
           ))}
         </Cards>
-      </StaffSection>
+      </CardSection>
+      <CardSection>
+        <h4>Our Values</h4>
+        <Cards>
+          {values.map(({ value, text, image }) => (
+            <ValuesCard value={value} text={text} image={image} />
+          ))}
+        </Cards>
+      </CardSection>
     </Layout>
   );
 }
