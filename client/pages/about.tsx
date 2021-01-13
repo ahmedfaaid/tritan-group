@@ -58,10 +58,20 @@ const CardSection = styled.section<ISectionProps>`
   }
 `;
 
-const Cards = styled.div`
+const Cards = styled.div<ICardsProps>`
   display: flex;
   justify-content: center;
-  width: 85rem;
+  ${props => {
+    if (props.width) {
+      return `
+        width: ${props.width}rem;
+      `;
+    } else {
+      return `
+        width: 85rem;
+      `;
+    }
+  }}
   margin: auto;
   flex-wrap: wrap;
 `;
@@ -149,15 +159,15 @@ export default function About() {
         <h4>Our Staff</h4>
         <Cards>
           {staff.map(({ image, name, title }) => (
-            <StaffCard image={image} name={name} title={title} />
+            <StaffCard image={image} name={name} title={title} key={image} />
           ))}
         </Cards>
       </CardSection>
       <CardSection>
         <h4>Our Values</h4>
-        <Cards>
+        <Cards width={120}>
           {values.map(({ value, text, image }) => (
-            <ValuesCard value={value} text={text} image={image} />
+            <ValuesCard value={value} text={text} image={image} key={image} />
           ))}
         </Cards>
       </CardSection>

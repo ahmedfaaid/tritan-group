@@ -10,8 +10,8 @@ interface ICardProps {
 const Card = styled.div`
   padding: 2rem;
   margin: 1rem;
-  width: 25rem;
-  height: 30rem;
+  width: 35rem;
+  height: 40rem;
   text-align: center;
   border-radius: 1rem;
   color: ${t.colors.ebony};
@@ -26,11 +26,12 @@ const Card = styled.div`
   h5 {
     font-size: 1.8rem;
     color: ${t.colors.primary};
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 
   p {
     font-size: 1.4rem;
+    line-height: 1.4;
   }
 `;
 
