@@ -16,8 +16,9 @@ const Navigation = styled.nav`
 `;
 
 const Logo = styled.div`
-  width: 12rem;
+  width: 20rem;
   margin-left: 2.5rem;
+  cursor: pointer;
 
   img {
     width: 100%;
@@ -48,13 +49,13 @@ export default function Navbar() {
       </Logo>
       <ul>
         <li>
-          <Link href='/about'>
-            <NavLink>About Us</NavLink>
+          <Link href='/'>
+            <NavLink>Home</NavLink>
           </Link>
         </li>
         <li>
-          <Link href='/why'>
-            <NavLink>Why Us?</NavLink>
+          <Link href='/about'>
+            <NavLink>About Us</NavLink>
           </Link>
         </li>
         <li>
@@ -63,8 +64,8 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
-          <Link href='/jobs'>
-            <NavLink>Job Postings</NavLink>
+          <Link href='/talent'>
+            <NavLink>Talent</NavLink>
           </Link>
         </li>
         <li>
