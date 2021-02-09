@@ -67,11 +67,11 @@ export default function Hero() {
   return (
     <HeroSection>
       <CTAText>
-        <h3>Lorem ipsum dolor sit amet</h3>
+        <h3>Bespoke strategies for talent acquisition</h3>
         <p>
-          Nulla dolor ante, posuere a fermentum quis, rutrum eu dui. Ut
-          scelerisque ultrices odio quis convallis. Mauris tincidunt, turpis nec
-          convallis ullamcorper, mauris nunc vulputate dui
+          Whether you are a business looking to attract the best talent, or a
+          giant talent seeking a new opportunity, Tritan Group is the partner
+          you deserve.
         </p>
         <div>
           <Button text='Find your next career' to='jobs' />
