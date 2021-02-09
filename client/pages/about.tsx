@@ -18,10 +18,16 @@ const AboutText = styled.div`
   width: 60%;
   margin: 5rem auto 5rem;
 
+  h4 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
   p {
     font-size: 1.6rem;
     letter-spacing: 1px;
-    line-height: 1.2;
+    line-height: 1.5;
     color: ${t.colors.ebony};
 
     &:not(:last-of-type) {
@@ -128,27 +134,21 @@ export default function About() {
           text='About Tritan Group'
         />
         <AboutText>
+          <h4>Your success is our business</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            sed lacus a elit congue auctor. Vivamus posuere, justo ut imperdiet
-            gravida, dolor metus vehicula tellus, ut scelerisque ex erat in
-            nisl.
-          </p>
-          <p>
-            Sed quam velit, congue in suscipit sodales, vulputate in dolor. Duis
-            feugiat gravida dapibus. Praesent eros nisi, rhoncus sed odio in,
-            laoreet aliquet massa. Ut pharetra sollicitudin sapien, quis
-            faucibus mauris porttitor vel. Morbi sodales lacus vel ipsum auctor,
-            tincidunt posuere lorem tempor. Praesent nec feugiat dolor, vitae
-            posuere nibh. Mauris pulvinar auctor nisl ut venenatis. Aliquam
-            sagittis ante id lacus dignissim, eu consequat risus faucibus.
-            Aenean tristique massa quis magna mollis, nec posuere nisl
-            tristique.
-          </p>
-          <p>
-            In euismod iaculis dapibus. Aliquam ac neque volutpat, fringilla sem
-            eu, finibus lectus. Nulla hendrerit sit amet eros sit amet auctor.
-            Praesent rhoncus arcu nec convallis malesuada.
+            We understand that no two individuals, offices, teams or businesses
+            are the same. Yet, traditional recruitment agencies of all sizes
+            operate with the same one-size-fits-all service model. This
+            cookie-cutter approach often leads to the incorrect matching between
+            talent and businesses. The result is that both clients and
+            candidates are left frustrated in the process. Tritan Group was
+            created to provide bespoke solutions that match our clients and
+            candidates unique needs and circumstances. At Tritan, we take the
+            time to understand our clients and candidates. We learn their needs,
+            wants, motivations, and challenges in order to create a custom
+            tailored recruitment solution. This in-depth knowledge ensures we
+            place the precise individuals that fit into our clients strategic
+            objectives.
           </p>
           <div>
             <Button text='Contact' to='contact' border='black' />
