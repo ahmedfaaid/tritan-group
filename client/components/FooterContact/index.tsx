@@ -95,18 +95,13 @@ export default function FooterContact() {
               </Link>
             </li>
             <li>
-              <Link href='/why'>
-                <a>Our Services</a>
-              </Link>
-            </li>
-            <li>
               <Link href='/employers'>
                 <a>Employers</a>
               </Link>
             </li>
             <li>
-              <Link href='/jobs'>
-                <a>Jobs</a>
+              <Link href='/talent'>
+                <a>Talent</a>
               </Link>
             </li>
             <li>
@@ -118,11 +113,10 @@ export default function FooterContact() {
         </Links>
         <Address>
           <h4>Our Address</h4>
-          <p>6455 Macleod Trail SW</p>
-          <p>Intersection of Macleod Trail and Glenmore Trail</p>
-          <p>Calgary, AB</p>
-          <p>T2H 0K8</p>
-          <p>Phone: 555-555-5555</p>
+          <p>10404 - 31 Ave NW </p>
+          <p>Edmonton, AB</p>
+          <p>T6J 2Y3</p>
+          <p>Phone: 587-430-3790</p>
           <p>
             Email: <a href='info@tritangroup.ca'>info@tritangroup.ca</a>
           </p>
