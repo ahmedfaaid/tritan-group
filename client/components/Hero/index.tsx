@@ -74,7 +74,7 @@ export default function Hero() {
           you deserve.
         </p>
         <div>
-          <Button text='Find your next career' to='jobs' />
+          <Button text='Find your next career' to='talent' />
           <Button
             text='Looking for talent?'
             to='employers'
