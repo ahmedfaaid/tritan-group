@@ -1,9 +1,14 @@
+import ImageStrip from '../../components/ImageStrip';
 import Layout from '../../components/layout';
 
 export default function Mission() {
   return (
     <Layout page='Our Mission'>
-      <h1>Our Mission</h1>
+      <ImageStrip
+        image='ben-white-gEKMstKfZ6w-unsplash.jpg'
+        text='Our Mission'
+        variant='blue'
+      />
     </Layout>
   );
 }
