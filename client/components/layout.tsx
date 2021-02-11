@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Footer from './footer';
 import Header from './header';
 
-export default function Layout({ children }) {
+export default function Layout({ children, page }) {
   return (
     <>
       <Head>
@@ -11,7 +11,7 @@ export default function Layout({ children }) {
           href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap'
           rel='stylesheet'
         />
-        <title>Tritan Group | Home</title>
+        <title>Tritan Group | {page}</title>
       </Head>
       <div>
         <Header />

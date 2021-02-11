@@ -127,7 +127,7 @@ export default function About() {
     }
   ];
   return (
-    <Layout>
+    <Layout page='About Us'>
       <section>
         <ImageStrip
           image='laura-davidson-QBAH4IldaZY-unsplash.jpg'

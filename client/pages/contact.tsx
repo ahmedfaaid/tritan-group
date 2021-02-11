@@ -57,7 +57,7 @@ const Icon = styled(FontAwesomeIcon)`
 
 export default function Contact() {
   return (
-    <Layout>
+    <Layout page='Contact Us'>
       <section>
         <ImageStrip
           image='julian-hochgesang-Dkn8-zPIbwo-unsplash.jpg'
