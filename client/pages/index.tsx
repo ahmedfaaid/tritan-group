@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <Layout page='Home'>
       <Hero />
-      <FeaturedPostings />
+      {/* <FeaturedPostings /> */}
     </Layout>
   );
 }
