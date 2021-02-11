@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { theme as t } from '../styles/Theme';
-import Button from '../components/Button';
-import Layout from '../components/layout';
-import StaffCard from '../components/StaffCard';
-import ImageStrip from '../components/ImageStrip';
-import ValuesCard from '../components/ValuesCard';
+import { theme as t } from '../../styles/Theme';
+import Button from '../../components/Button';
+import Layout from '../../components/layout';
+import StaffCard from '../../components/StaffCard';
+import ImageStrip from '../../components/ImageStrip';
+import ValuesCard from '../../components/ValuesCard';
 
 interface ISectionProps {
   background?: string;
@@ -141,28 +141,30 @@ export default function About() {
             operate with the same one-size-fits-all service model. This
             cookie-cutter approach often leads to the incorrect matching between
             talent and businesses. The result is that both clients and
-            candidates are left frustrated in the process. Tritan Group was
-            created to provide bespoke solutions that match our clients and
-            candidates unique needs and circumstances. At Tritan, we take the
-            time to understand our clients and candidates. We learn their needs,
-            wants, motivations, and challenges in order to create a custom
-            tailored recruitment solution. This in-depth knowledge ensures we
-            place the precise individuals that fit into our clients strategic
-            objectives.
+            candidates are left frustrated in the process.
+          </p>
+          <p>
+            Tritan Group was created to provide bespoke solutions that match our
+            clients and candidates unique needs and circumstances. At Tritan, we
+            take the time to understand our clients and candidates. We learn
+            their needs, wants, motivations, and challenges in order to create a
+            custom tailored recruitment solution. This in-depth knowledge
+            ensures we place the precise individuals that fit into our clients
+            strategic objectives.
           </p>
           <div>
             <Button text='Contact' to='contact' border='black' />
           </div>
         </AboutText>
       </section>
-      <CardSection background='offWhite'>
+      {/* <CardSection background='offWhite'>
         <h4>Our Staff</h4>
         <Cards>
           {staff.map(({ image, name, title }) => (
             <StaffCard image={image} name={name} title={title} key={image} />
           ))}
         </Cards>
-      </CardSection>
+      </CardSection> */}
       <CardSection>
         <h4>Our Values</h4>
         <Cards width={120}>
