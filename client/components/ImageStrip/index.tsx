@@ -4,10 +4,12 @@ import { theme as t } from '../../styles/Theme';
 interface IImageStripProps {
   image: string;
   text: string;
+  variant?: string;
 }
 
 interface IImgProps {
   image: string;
+  variant?: string;
 }
 
 const ImgStrip = styled.div<IImgProps>`
@@ -29,7 +31,20 @@ const ImgStrip = styled.div<IImgProps>`
 
   &::before {
     content: '';
-    background-color: rgba(255, 150, 45, 0.8);
+    ${props => {
+      switch (props.variant) {
+        case 'blue':
+          return `
+            background-color: ${t.colors.blue};
+            opacity: 0.8;
+          `;
+        default:
+          return `
+            background-color: ${t.colors.primary};
+            opacity: 0.8;
+          `;
+      }
+    }}
     position: absolute;
     top: 0;
     right: 0;
@@ -49,9 +64,9 @@ const ImgStrip = styled.div<IImgProps>`
   }
 `;
 
-export default function ImageStrip({ image, text }: IImageStripProps) {
+export default function ImageStrip({ image, text, variant }: IImageStripProps) {
   return (
-    <ImgStrip image={image}>
+    <ImgStrip image={image} variant={variant}>
       <h3>{text}</h3>
     </ImgStrip>
   );
