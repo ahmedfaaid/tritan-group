@@ -43,8 +43,16 @@ const CTAText = styled.div`
     max-width: 70%;
   }
 
+  h4 {
+    font-size: 2.5rem;
+    margin: 0 auto 2rem;
+    color: ${t.colors.white};
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
   p {
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: ${t.colors.white};
     letter-spacing: 1px;
     line-height: 1.4;
@@ -67,7 +75,8 @@ export default function Hero() {
   return (
     <HeroSection>
       <CTAText>
-        <h3>Bespoke strategies for talent acquisition</h3>
+        <h3>Bespoke strategies</h3>
+        <h4>For talent acquisition</h4>
         <p>
           Whether you are a business looking to attract the best talent, or a
           giant talent seeking a new opportunity, Tritan Group is the partner
