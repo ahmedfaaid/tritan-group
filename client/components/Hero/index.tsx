@@ -44,7 +44,7 @@ const CTAText = styled.div`
   }
 
   h4 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     margin: 0 auto 2rem;
     color: ${t.colors.white};
     font-weight: 600;
@@ -73,7 +73,7 @@ export default function Hero() {
   return (
     <HeroSection>
       <CTAText>
-        <h3>Bespoke strategies</h3>
+        <h3>Bespoke solutions</h3>
         <h4>For talent acquisition</h4>
         <p>
           Whether you are a business looking to attract the best talent, or a
