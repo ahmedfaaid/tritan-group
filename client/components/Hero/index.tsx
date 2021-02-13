@@ -41,6 +41,11 @@ const CTAText = styled.div`
     letter-spacing: 1px;
     line-height: 1.2;
     max-width: 70%;
+
+    @media (max-width: 425px) {
+      font-size: 3.5rem;
+      max-width: 90%;
+    }
   }
 
   h4 {
@@ -49,6 +54,10 @@ const CTAText = styled.div`
     color: ${t.colors.white};
     font-weight: 600;
     text-transform: uppercase;
+
+    @media (max-width: 425px) {
+      font-size: 3rem;
+    }
   }
 
   p {
@@ -61,6 +70,10 @@ const CTAText = styled.div`
 
     @media (max-width: 768px) {
       font-size: 1.6rem;
+    }
+
+    @media (max-width: 425px) {
+      max-width: 80%;
     }
   }
 
