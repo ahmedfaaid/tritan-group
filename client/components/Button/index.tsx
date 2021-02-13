@@ -25,6 +25,15 @@ const Btn = styled.a<IBtnProps>`
   cursor: pointer;
   transition: background-color 0.2s;
 
+  &:not(:last-of-type) {
+    margin-right: 1.8rem;
+
+    @media (max-width: 425px) {
+      margin-right: auto;
+      margin-bottom: 2rem;
+    }
+  }
+
   ${props => {
     switch (props.border) {
       case 'black':
@@ -58,6 +67,12 @@ const Btn = styled.a<IBtnProps>`
         `;
     }
   }}
+
+  @media (max-width: 425px) {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 export default function Button({ text, to, border, background }: IButtonProps) {

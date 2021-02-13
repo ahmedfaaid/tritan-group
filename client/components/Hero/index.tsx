@@ -58,16 +58,14 @@ const CTAText = styled.div`
     line-height: 1.4;
     max-width: 60%;
     margin: auto;
+
+    @media (max-width: 768px) {
+      font-size: 1.6rem;
+    }
   }
 
   div {
     margin-top: 3rem;
-
-    a {
-      &:not(:last-of-type) {
-        margin-right: 1.8rem;
-      }
-    }
   }
 `;
 

@@ -6,6 +6,10 @@ const Container = styled.div`
   background-color: ${t.colors.lightEbony};
   position: relative;
   width: 100%;
+
+  @media (max-width: 425px) {
+    text-align: center;
+  }
 `;
 
 const FootContact = styled.div`
@@ -24,9 +28,19 @@ const FootContact = styled.div`
     color: ${t.colors.white};
     margin-bottom: 2rem;
   }
+
+  @media (max-width: 425px) {
+    display: block;
+    padding: 2rem 0;
+    height: auto;
+  }
 `;
 
 const Links = styled.div`
+  @media (max-width: 425px) {
+    margin-top: 10rem;
+  }
+
   li {
     margin: 1rem 0;
 
@@ -46,6 +60,10 @@ const Links = styled.div`
 `;
 
 const Address = styled.div`
+  @media (max-width: 425px) {
+    margin-top: 2rem;
+  }
+
   p {
     margin: 1rem 0;
     color: ${t.colors.ebony};
@@ -74,6 +92,12 @@ const Logo = styled.div`
 
   img {
     width: 100%;
+  }
+
+  @media (max-width: 425px) {
+    top: 2rem;
+    right: 50%;
+    transform: translate(50%, 0);
   }
 `;
 
