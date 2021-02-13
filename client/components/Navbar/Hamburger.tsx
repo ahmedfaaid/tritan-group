@@ -16,6 +16,7 @@ const StyledButton = styled.button<IButtonProps>`
   cursor: pointer;
   padding: 0;
   margin-right: 3rem;
+  margin-bottom: 0.8rem;
   z-index: 4;
 
   &:focus {
