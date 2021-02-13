@@ -6,7 +6,7 @@ interface IButtonProps {
 }
 
 const StyledButton = styled.button<IButtonProps>`
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-around;
   width: 3.5rem;
@@ -18,6 +18,10 @@ const StyledButton = styled.button<IButtonProps>`
   margin-right: 3rem;
   margin-bottom: 0.8rem;
   z-index: 4;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
 
   &:focus {
     outline: none;
