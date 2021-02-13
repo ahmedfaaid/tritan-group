@@ -59,10 +59,10 @@ const Btn = styled.a<IBtnProps>`
         `;
       default:
         return `
-          background-color: ${t.colors.primary};
+          background-color: ${t.colors.blue};
 
           &:hover {
-            background-color: ${t.colors.lightPrimary};
+            background-color: ${t.colors.lightBlue};
           }
         `;
     }
