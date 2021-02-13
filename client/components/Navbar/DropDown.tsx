@@ -7,6 +7,13 @@ const DropDownList = styled.ul`
   top: 6rem;
   z-index: 1;
   background-color: ${t.colors.blue};
+
+  @media (max-width: 768px) {
+    position: static;
+    top: 0;
+    z-index: 3;
+    margin-left: 1rem;
+  }
 `;
 
 export default function DropDown({ items }) {

@@ -6,6 +6,8 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { theme as t } from '../../styles/Theme';
 import DropDown from './DropDown';
 import { aboutItems, talentItems } from '../../utils/dropdownItems';
+import SideNav from './SideNav';
+import Hamburger from './Hamburger';
 
 const Navigation = styled.nav`
   background-color: ${t.colors.offWhite};
@@ -18,6 +20,10 @@ const Navigation = styled.nav`
 const NavList = styled.ul`
   margin-right: 1.5rem;
   display: flex;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Logo = styled.div`
@@ -51,6 +57,7 @@ const Icon = styled(FontAwesomeIcon)`
 export default function Navbar() {
   const [showAbout, setShowAbout] = useState(false);
   const [showTalent, setShowTalent] = useState(false);
+  const [showSideNav, setShowSideNav] = useState(false);
 
   const openDropDown = item => {
     if (item === 'about') {
@@ -120,6 +127,14 @@ export default function Navbar() {
           </Link>
         </li>
       </NavList>
+      <SideNav
+        showSideNav={showSideNav}
+        showAbout={showAbout}
+        showTalent={showTalent}
+        setShowAbout={setShowAbout}
+        setShowTalent={setShowTalent}
+      />
+      <Hamburger showSideNav={showSideNav} setShowSideNav={setShowSideNav} />
     </Navigation>
   );
 }
