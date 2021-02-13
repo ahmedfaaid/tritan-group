@@ -18,10 +18,23 @@ const AboutText = styled.div`
   width: 60%;
   margin: 5rem auto 5rem;
 
+  @media (max-width: 768px) {
+    width: 80%;
+  }
+
+  @media (max-width: 425px) {
+    width: 100%;
+    padding: 0 2rem;
+  }
+
   h4 {
     font-size: 3rem;
     text-align: center;
     margin-bottom: 5rem;
+
+    @media (max-width: 425px) {
+      font-size: 2.5rem;
+    }
   }
 
   p {
@@ -80,6 +93,24 @@ const Cards = styled.div<ICardsProps>`
   }}
   margin: auto;
   flex-wrap: wrap;
+
+  @media (max-width: 1024px) {
+    ${props => {
+      if (props.width) {
+        return `
+        width: ${props.width - 20}rem;
+      `;
+      } else {
+        return `
+        width: 65rem;
+      `;
+      }
+    }}
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export default function About() {
@@ -132,6 +163,7 @@ export default function About() {
         <ImageStrip
           image='laura-davidson-QBAH4IldaZY-unsplash.jpg'
           text='About Tritan Group'
+          variant='blue'
         />
         <AboutText>
           <h4>Your success is our business</h4>
