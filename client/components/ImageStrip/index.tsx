@@ -61,6 +61,10 @@ const ImgStrip = styled.div<IImgProps>`
     color: ${t.colors.white};
     text-transform: uppercase;
     font-weight: 600;
+
+    @media (max-width: 425px) {
+      font-size: 3rem;
+    }
   }
 `;
 
