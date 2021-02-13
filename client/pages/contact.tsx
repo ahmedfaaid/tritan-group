@@ -15,6 +15,10 @@ const ContactSection = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${t.colors.offWhite};
+
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;
 
 const ContactCard = styled.div`
@@ -30,6 +34,14 @@ const ContactCard = styled.div`
   align-items: center;
   box-shadow: 0 5px 10px -5px;
   border-radius: 1rem;
+
+  @media (max-width: 768px) {
+    margin: 1.5rem auto;
+  }
+
+  @media (max-width: 425px) {
+    width: 80%;
+  }
 
   div {
     align-self: start;
