@@ -14,6 +14,10 @@ const DropDownList = styled.ul`
     z-index: 3;
     margin-left: 1rem;
   }
+
+  @media (max-width: 425px) {
+    margin-left: 0;
+  }
 `;
 
 export default function DropDown({ items }) {

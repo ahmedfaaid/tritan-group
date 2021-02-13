@@ -44,6 +44,12 @@ const SideList = styled.ul<ISideNav>`
     cursor: pointer;
     text-transform: uppercase;
   }
+
+  @media (max-width: 425px) {
+    width: 100%;
+    text-align: center;
+    padding-left: 0;
+  }
 `;
 
 const ListItem = styled.li`
