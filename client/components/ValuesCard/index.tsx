@@ -18,6 +18,10 @@ const Card = styled.div`
   box-shadow: 0 5px 10px -5px;
   transition: box-shadow 0.2s;
 
+  @media (max-width: 425px) {
+    width: 80%;
+  }
+
   &:hover {
     box-shadow: 0 2px 10px -5px;
     background-color: ${t.colors.white};
