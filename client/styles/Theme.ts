@@ -9,6 +9,7 @@ export const theme: DefaultTheme = {
     black: '#000000',
     ebony: '#282C35',
     lightPrimary: '#FFAA41',
-    lightEbony: '#8C9099'
+    lightEbony: '#8C9099',
+    lightBlue: '#2898E8'
   }
 };
