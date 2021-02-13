@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { theme as t } from '../../styles/Theme';
 import DropDown from './DropDown';
-import { aboutItems, talentItems } from '../../utils/dropdownItems';
+import { aboutItems } from '../../utils/dropdownItems';
 import SideNav from './SideNav';
 import Hamburger from './Hamburger';
 
@@ -56,27 +56,14 @@ const Icon = styled(FontAwesomeIcon)`
 
 export default function Navbar() {
   const [showAbout, setShowAbout] = useState(false);
-  const [showTalent, setShowTalent] = useState(false);
   const [showSideNav, setShowSideNav] = useState(false);
 
-  const openDropDown = item => {
-    if (item === 'about') {
-      setShowAbout(true);
-    }
-
-    if (item === 'talent') {
-      setShowTalent(true);
-    }
+  const openDropDown = () => {
+    setShowAbout(true);
   };
 
-  const closeDropDown = item => {
-    if (item === 'about') {
-      setShowAbout(false);
-    }
-
-    if (item === 'talent') {
-      setShowTalent(false);
-    }
+  const closeDropDown = () => {
+    setShowAbout(false);
   };
 
   return (
@@ -93,8 +80,8 @@ export default function Navbar() {
           </Link>
         </li>
         <li
-          onMouseEnter={() => openDropDown('about')}
-          onMouseLeave={() => closeDropDown('about')}
+          onMouseEnter={() => openDropDown()}
+          onMouseLeave={() => closeDropDown()}
         >
           <Link href='/about'>
             <NavLink>
@@ -109,17 +96,10 @@ export default function Navbar() {
             <NavLink>Employers</NavLink>
           </Link>
         </li>
-        <li
-          onMouseEnter={() => openDropDown('talent')}
-          onMouseLeave={() => closeDropDown('talent')}
-        >
+        <li>
           <Link href='/talent'>
-            <NavLink>
-              Talent
-              <Icon icon={faAngleDown} />
-            </NavLink>
+            <NavLink>Talent</NavLink>
           </Link>
-          {showTalent && <DropDown items={talentItems} />}
         </li>
         <li>
           <Link href='/contact'>
@@ -130,9 +110,7 @@ export default function Navbar() {
       <SideNav
         showSideNav={showSideNav}
         showAbout={showAbout}
-        showTalent={showTalent}
         setShowAbout={setShowAbout}
-        setShowTalent={setShowTalent}
       />
       <Hamburger showSideNav={showSideNav} setShowSideNav={setShowSideNav} />
     </Navigation>

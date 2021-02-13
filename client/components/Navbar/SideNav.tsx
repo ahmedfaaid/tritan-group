@@ -69,13 +69,7 @@ const Icon = styled(FontAwesomeIcon)`
   margin-left: 0.5rem;
 `;
 
-export default function SideNav({
-  showSideNav,
-  showAbout,
-  showTalent,
-  setShowAbout,
-  setShowTalent
-}) {
+export default function SideNav({ showSideNav, showAbout, setShowAbout }) {
   return (
     <SideList show={showSideNav}>
       <ListItem>
@@ -96,11 +90,9 @@ export default function SideNav({
         </Link>
       </ListItem>
       <ListItem>
-        <span onClick={() => setShowTalent(!showTalent)}>
-          Talent
-          <Icon icon={faAngleDown} />
-        </span>
-        {showTalent && <DropDown items={sidenavTalentItems} />}
+        <Link href='/talent'>
+          <NavLink>Talent</NavLink>
+        </Link>
       </ListItem>
       <ListItem>
         <Link href='/contact'>
