@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { theme as t } from './Theme';
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -38,19 +39,6 @@ export const GlobalStyles = createGlobalStyle`
   ol,
   ul {
     list-style: none;
-  }
-
-  blockquote,
-  q {
-    quotes: none;
-  }
-
-  blockquote:before,
-  blockquote:after,
-  q:before,
-  q:after {
-    content: '';
-    content: none;
   }
 
   table {

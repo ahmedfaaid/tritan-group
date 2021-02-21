@@ -3,7 +3,7 @@ import { theme as t } from '../../styles/Theme';
 import ImageStrip from '../../components/ImageStrip';
 import Layout from '../../components/layout';
 import ValuesCard from '../../components/ValuesCard';
-import { Blockquote } from '../../styles/blockquote';
+import Blockquote from '../../components/Blockquote';
 
 interface ISectionProps {
   background?: string;
@@ -160,13 +160,11 @@ export default function Mission() {
           variant='blue'
         />
         <MissionText>
-          <Blockquote>
-            The bitterness of poor quality is remembered long after the sweet
-            taste of low prices are forgotten -{' '}
-            <span>
-              20<sup>th</sup> century proverb
-            </span>
-          </Blockquote>
+          <Blockquote
+            quote='The bitterness of poor quality is remembered long after the sweet
+            taste of low prices are forgotten'
+            by='20th Century Proverb'
+          />
           <p>
             At Tritan, we believe that the process and the way a business
             operates reflect the outcomes they are trying to get. Therefore, our
