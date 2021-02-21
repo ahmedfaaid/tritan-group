@@ -23,7 +23,7 @@ const EmployerText = styled.div`
   transition: box-shadow 0.2s;
 
   @media (max-width: 425px) {
-    width: 80%;
+    width: 100%;
   }
 
   &:hover {
