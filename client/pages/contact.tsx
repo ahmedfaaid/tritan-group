@@ -88,7 +88,7 @@ export default function Contact() {
             <Icon icon={faEnvelope} />
             <div>
               <h4>Email</h4>
-              <a href='info@tritangroup.ca'>info@tritangroup.ca</a>
+              <a href='mailto:info@tritangroup.ca'>info@tritangroup.ca</a>
             </div>
           </ContactCard>
           <ContactCard>
