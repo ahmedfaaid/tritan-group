@@ -5,6 +5,10 @@ import Layout from '../components/layout';
 
 const ContactSection = styled.div`
   padding: 5rem;
+
+  @media (max-width: 425px) {
+    padding: 2rem;
+  }
 `;
 
 const EmployerText = styled.div`

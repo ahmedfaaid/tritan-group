@@ -5,6 +5,10 @@ import ImageStrip from '../../components/ImageStrip';
 
 const ContactSection = styled.div`
   padding: 5rem;
+
+  @media (max-width: 425px) {
+    padding: 2rem;
+  }
 `;
 
 const TalentText = styled.div`
