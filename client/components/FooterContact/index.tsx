@@ -137,7 +137,6 @@ export default function FooterContact() {
         </Links>
         <Address>
           <h4>Our Address</h4>
-          <p>10404 - 31 Ave NW </p>
           <p>Edmonton, AB</p>
           <p>T6J 2Y3</p>
           <p>Phone: 587-430-3790</p>

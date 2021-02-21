@@ -80,7 +80,6 @@ export default function Contact() {
             <Icon icon={faMapMarkerAlt} />
             <div>
               <h4>Address</h4>
-              <p>10404 - 31 Ave NW</p>
               <p>Edmonton, AB</p>
               <p>T6J 2Y3</p>
             </div>
