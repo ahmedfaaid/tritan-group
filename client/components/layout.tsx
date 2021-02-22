@@ -1,9 +1,15 @@
 import Head from 'next/head';
+import { ReactNode } from 'react';
 import Footer from './footer';
 import Header from './header';
 import Seo from './seo';
 
-export default function Layout({ children, page }) {
+interface ILayout {
+  children: ReactNode;
+  page?: string;
+}
+
+export default function Layout({ children, page }: ILayout) {
   return (
     <>
       <Head>

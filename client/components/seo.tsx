@@ -1,8 +1,14 @@
 import Head from 'next/head';
 import { defaultTitle, description, hook, image, url } from '../utils/seoData';
 
-export default function Seo({ page }) {
-  const pageTitle = `${page} - Tritan Group - ${hook}`;
+interface ISeo {
+  page?: string;
+}
+
+export default function Seo({ page }: ISeo) {
+  const pageTitle = page
+    ? `${page} - Tritan Group - ${hook}`
+    : `Tritan Group - ${hook}`;
 
   const siteTitle = pageTitle || defaultTitle;
 
