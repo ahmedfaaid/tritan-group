@@ -8,7 +8,7 @@ export const values = [
   {
     value: 'Professionalism',
     text:
-      'Using our in-depth knowledge, industry knowledge and expertise to serve you. We are industry expert, and We take ownership of our work.',
+      'Using our in-depth industry knowledge, industry knowledge and expertise to serve you. We are industry expert, and We take ownership of our work.',
     image: 'hunters-race-MYbhN8KaaEc-unsplash.jpg'
   },
   {
