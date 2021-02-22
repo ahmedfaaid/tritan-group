@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Footer from './footer';
 import Header from './header';
+import Seo from './seo';
 
 export default function Layout({ children, page }) {
   return (
@@ -14,6 +15,7 @@ export default function Layout({ children, page }) {
         />
         <title>Tritan Group | {page}</title>
       </Head>
+      <Seo page={page} />
       <div>
         <Header />
         <div>
