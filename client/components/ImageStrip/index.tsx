@@ -29,6 +29,11 @@ const ImgStrip = styled.div<IImgProps>`
   justify-content: center;
   align-items: center;
 
+  @media (max-width: 425px) {
+    background-position: center center;
+    background-attachment: scroll;
+  }
+
   &::before {
     content: '';
     ${props => {
