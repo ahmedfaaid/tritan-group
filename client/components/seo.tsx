@@ -33,6 +33,8 @@ export default function Seo({ page }: ISeo) {
 
       {image && <meta property='og:image' content={image} />}
 
+      <title>{siteTitle}</title>
+
       <link
         rel='apple-touch-icon'
         sizes='180x180'
