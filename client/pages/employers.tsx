@@ -57,6 +57,19 @@ const EmployerText = styled.div`
   }
 `;
 
+const CardImage = styled.div`
+  width: 12rem;
+  height: 12rem;
+  margin: 0 auto 2rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+`;
+
 export default function Employers() {
   return (
     <Layout page='Employers'>
@@ -67,16 +80,17 @@ export default function Employers() {
         />
         <ContactSection>
           <EmployerText>
-            <h5>Michelle Goltman</h5>
-            <span>Partner & Director of Business Development</span>
+            <CardImage>
+              <img src='/hailey-mumby.jpg' alt='Hailey Mumby' />
+            </CardImage>
+            <h5>Hailey Mumby</h5>
+            <span>Director of business Development</span>
             <p>
               Phone: <a href='tel:+15877602432'>587-760-2432</a>
             </p>
             <p>
               Email:{' '}
-              <a href='mailto:michelle.goltman@tritan.ca'>
-                Michelle.Goltman@tritan.ca
-              </a>
+              <a href='mailto:hailey.mumby@tritan.ca'>Hailey.Mumby@tritan.ca</a>
             </p>
           </EmployerText>
         </ContactSection>
