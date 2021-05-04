@@ -55,7 +55,7 @@ export const Card = styled.div`
   padding: 4rem 0;
   margin: 1rem auto;
   width: 40rem;
-  height: 40rem;
+  min-height: 40rem;
   position: relative;
   text-align: center;
   border-radius: 1rem;
@@ -72,7 +72,7 @@ export const Card = styled.div`
     box-shadow: 0 2px 10px -5px;
     background-color: ${t.colors.white};
 
-    & span {
+    & .view-more {
       color: ${t.colors.primary};
     }
   }
@@ -104,5 +104,9 @@ export const Card = styled.div`
     right: 1rem;
     font-size: 1.2rem;
     font-style: italic;
+
+    @media (max-width: 425px) {
+      font-size: 0.8rem;
+    }
   }
 `;

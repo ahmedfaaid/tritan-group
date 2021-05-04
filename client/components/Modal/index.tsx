@@ -56,6 +56,10 @@ const Content = styled.div`
   text-align: center;
   border-radius: 1rem;
 
+  @media (max-width: 425px) {
+    width: 100%;
+  }
+
   h5 {
     font-size: 2.2rem;
     color: ${t.colors.primary};
@@ -70,6 +74,10 @@ const Content = styled.div`
     a {
       color: ${t.colors.blue};
     }
+
+    @media (max-width: 425px) {
+      font-size: 1.6rem;
+    }
   }
 
   & .bio {
@@ -78,6 +86,10 @@ const Content = styled.div`
     color: ${t.colors.lightEbony};
     line-height: 1.5;
     margin-top: 3rem;
+
+    @media (max-width: 425px) {
+      font-size: 1.4rem;
+    }
   }
 `;
 
@@ -98,6 +110,11 @@ const CardImage = styled.div`
   width: 15rem;
   height: 15rem;
   margin: 0 auto 2rem;
+
+  @media (max-width: 425px) {
+    width: 10rem;
+    height: 10rem;
+  }
 
   img {
     width: 100%;
