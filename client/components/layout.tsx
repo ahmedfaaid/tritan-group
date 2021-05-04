@@ -21,7 +21,7 @@ export default function Layout({ children, page }: ILayout) {
         />
       </Head>
       <Seo page={page} />
-      <div>
+      <div style={{ position: 'relative' }}>
         <Header />
         <div>
           <main>{children}</main>

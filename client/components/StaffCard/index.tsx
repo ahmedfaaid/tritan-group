@@ -1,38 +1,22 @@
+import { Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
+import { Card } from '../../styles/GlobalStyles';
 import { theme as t } from '../../styles/Theme';
+import { formatPhoneNumber } from '../../utils//general';
 
-interface ICardProps {
+export type Member = {
   image: string;
   name: string;
   title: string;
+  email: string;
+  phone: string;
+  bio: string;
+};
+
+interface ICardProps {
+  member: Member;
+  setOpen: () => void;
 }
-
-const Card = styled.div`
-  padding: 2rem;
-  margin: 1rem;
-  width: 25rem;
-  height: 30rem;
-  text-align: center;
-  border-radius: 1rem;
-  color: ${t.colors.ebony};
-  box-shadow: 0 5px 10px -5px;
-  transition: box-shadow 0.2s;
-
-  &:hover {
-    box-shadow: 0 2px 10px -5px;
-    background-color: ${t.colors.white};
-  }
-
-  h5 {
-    font-size: 1.8rem;
-    color: ${t.colors.primary};
-    margin-bottom: 2rem;
-  }
-
-  p {
-    font-size: 1.4rem;
-  }
-`;
 
 const CardImage = styled.div`
   width: 12rem;
@@ -47,14 +31,30 @@ const CardImage = styled.div`
   }
 `;
 
-export default function StaffCard({ image, name, title }: ICardProps) {
+export default function StaffCard({ member, setOpen }: ICardProps) {
+  const { image, name, title, email, phone, bio } = member;
+
   return (
-    <Card>
+    <Card onClick={() => setOpen()}>
+      <span className='view-more'>Click to view more</span>
       <CardImage>
-        <img src={`/${image}`} alt={name} />
+        <img
+          src={
+            image
+              ? image
+              : `https://via.placeholder.com/150/ff962d/ffffff?text=Tritan+Group`
+          }
+          alt={name}
+        />
       </CardImage>
       <h5>{name}</h5>
       <p>{title}</p>
+      <p>
+        Phone: <a href={`tel:+1${phone}`}>{formatPhoneNumber(phone)}</a>
+      </p>
+      <p>
+        Email: <a href={`mailto:${email}`}>{email}</a>
+      </p>
     </Card>
   );
 }

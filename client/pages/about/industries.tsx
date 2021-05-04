@@ -72,6 +72,7 @@ export default function Industries() {
             <li>Property Management</li>
             <li>Office/Administration</li>
             <li>Skilled Trades</li>
+            <li>Legal</li>
           </ul>
         </IndustryText>
       </section>

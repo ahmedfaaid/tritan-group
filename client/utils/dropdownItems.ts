@@ -10,11 +10,11 @@ export const aboutItems = [
   {
     name: 'Industries',
     to: '/about/industries'
+  },
+  {
+    name: 'Meet The Team',
+    to: '/about/team'
   }
-  // {
-  //   name: 'Our Titans',
-  //   to: '/about/titans'
-  // }
 ];
 
 export const talentItems = [
@@ -40,11 +40,11 @@ export const sidenavAboutItems = [
   {
     name: 'Industries',
     to: '/about/industries'
+  },
+  {
+    name: 'Meet The Team',
+    to: '/about/team'
   }
-  // {
-  //   name: 'Our Titans',
-  //   to: '/about/titans'
-  // }
 ];
 
 export const sidenavTalentItems = [
