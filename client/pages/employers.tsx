@@ -36,7 +36,7 @@ export default function Employers() {
         <ContactSection>
           <Card>
             <h5>Hailey Mumby</h5>
-            <span>Director of business Development</span>
+            <span>Director of Business Development</span>
             <p>
               Phone: <a href='tel:+15877602430'>587-760-2430</a>
             </p>
