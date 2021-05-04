@@ -12,18 +12,18 @@ const ContactSection = styled.div`
   }
 `;
 
-const CardImage = styled.div`
-  width: 12rem;
-  height: 12rem;
-  margin: 0 auto 2rem;
+// const CardImage = styled.div`
+//   width: 12rem;
+//   height: 12rem;
+//   margin: 0 auto 2rem;
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-`;
+//   img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//     border-radius: 50%;
+//   }
+// `;
 
 export default function Employers() {
   return (
@@ -35,13 +35,10 @@ export default function Employers() {
         />
         <ContactSection>
           <Card>
-            <CardImage>
-              <img src='/hailey-mumby.jpg' alt='Hailey Mumby' />
-            </CardImage>
             <h5>Hailey Mumby</h5>
             <span>Director of business Development</span>
             <p>
-              Phone: <a href='tel:+15877602432'>587-760-2432</a>
+              Phone: <a href='tel:+15877602430'>587-760-2430</a>
             </p>
             <p>
               Email:{' '}

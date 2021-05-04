@@ -133,6 +133,10 @@ export default function Modal({ open, set, selectedMember }: IModalProps) {
     }
   };
 
+  if (!selectedMember) {
+    return null;
+  }
+
   return (
     <Wrapper
       open={open}

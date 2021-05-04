@@ -67,15 +67,15 @@ export default function Talent() {
         />
         <ContactSection>
           <TalentText>
-            <h5>Michelle Goltman</h5>
-            <span>Partner & Director of Business Development</span>
-            <p>
+            <h5>Rebecca Bolsover</h5>
+            <span>Recruiter</span>
+            {/* <p>
               Phone: <a href='tel:+15877602432'>587-760-2432</a>
-            </p>
+            </p> */}
             <p>
               Email:{' '}
-              <a href='mailto:michelle.goltman@tritan.ca'>
-                Michelle.Goltman@tritan.ca
+              <a href='mailto:Rebecca.Bolsover@tritan.ca'>
+                Rebecca.Bolsover@tritan.ca
               </a>
             </p>
           </TalentText>
