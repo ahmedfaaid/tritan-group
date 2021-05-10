@@ -50,7 +50,10 @@ export default function StaffCard({ member, setOpen }: ICardProps) {
       <h5>{name}</h5>
       <p>{title}</p>
       <p>
-        Phone: <a href={`tel:+1${phone}`}>{formatPhoneNumber(phone)}</a>
+        Phone:{' '}
+        <a href={phone ? `tel:+1${phone}` : '#'}>
+          {phone ? formatPhoneNumber(phone) : '...'}
+        </a>
       </p>
       <p>
         Email: <a href={`mailto:${email}`}>{email}</a>
