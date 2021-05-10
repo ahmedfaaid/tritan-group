@@ -34,6 +34,8 @@ const CardImage = styled.div`
 export default function StaffCard({ member, setOpen }: ICardProps) {
   const { image, name, title, email, phone, bio } = member;
 
+  const handleChildClick = e => e.stopPropagation();
+
   return (
     <Card onClick={() => setOpen()}>
       <span className='view-more'>Click to view more</span>
@@ -51,12 +53,15 @@ export default function StaffCard({ member, setOpen }: ICardProps) {
       <p>{title}</p>
       <p>
         Phone:{' '}
-        <a href={phone ? `tel:+1${phone}` : '#'}>
+        <a href={phone ? `tel:+1${phone}` : '#'} onClick={handleChildClick}>
           {phone ? formatPhoneNumber(phone) : '...'}
         </a>
       </p>
       <p>
-        Email: <a href={`mailto:${email}`}>{email}</a>
+        Email:{' '}
+        <a href={`mailto:${email}`} onClick={handleChildClick}>
+          {email}
+        </a>
       </p>
     </Card>
   );
