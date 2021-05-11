@@ -9,6 +9,7 @@ import Modal from '../../components/Modal';
 const TeamSection = styled.div`
   padding: 5rem;
   display: flex;
+  flex-wrap: wrap;
 
   @media (max-width: 425px) {
     padding: 2rem;
