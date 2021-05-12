@@ -38,7 +38,7 @@ export default function Employers() {
             <h5>Hailey Mumby</h5>
             <span>Director of Business Development</span>
             <p>
-              Phone: <a href='tel:+15877602430'>587-760-2430</a>
+              Phone: <a href='tel:+15879857609'>587-985-7609</a>
             </p>
             <p>
               Email:{' '}

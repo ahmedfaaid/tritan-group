@@ -69,9 +69,9 @@ export default function Talent() {
           <TalentText>
             <h5>Rebecca Bolsover</h5>
             <span>Recruiter</span>
-            {/* <p>
-              Phone: <a href='tel:+15877602432'>587-760-2432</a>
-            </p> */}
+            <p>
+              Phone: <a href='tel:+15877602430'>587-760-2430</a>
+            </p>
             <p>
               Email:{' '}
               <a href='mailto:Rebecca.Bolsover@tritan.ca'>
