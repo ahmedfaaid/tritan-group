@@ -19,8 +19,8 @@ export const aboutItems = [
 
 export const talentItems = [
   {
-    name: 'Job Boards',
-    to: '/talent/jobs'
+    name: 'Current Opportunities',
+    to: '/talent/current-opportunities'
   }
 ];
 
@@ -53,7 +53,7 @@ export const sidenavTalentItems = [
     to: '/talent'
   },
   {
-    name: 'Job Boards',
-    to: '/talent/jobs'
+    name: 'Current Opportunities',
+    to: '/talent/current-opportunities'
   }
 ];

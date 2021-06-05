@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { theme as t } from '../../styles/Theme';
 import DropDown from './DropDown';
-import { aboutItems } from '../../utils/dropdownItems';
+import { aboutItems, talentItems } from '../../utils/dropdownItems';
 import SideNav from './SideNav';
 import Hamburger from './Hamburger';
 
@@ -57,13 +57,23 @@ const Icon = styled(FontAwesomeIcon)`
 export default function Navbar() {
   const [showAbout, setShowAbout] = useState(false);
   const [showSideNav, setShowSideNav] = useState(false);
+  const [showTalent, setShowTalent] = useState(false);
 
-  const openDropDown = () => {
-    setShowAbout(true);
+  const openDropDown = ele => {
+    if (ele === 'about') {
+      setShowAbout(true);
+      return;
+    }
+
+    if (ele === 'talent') {
+      setShowTalent(true);
+      return;
+    }
   };
 
   const closeDropDown = () => {
     setShowAbout(false);
+    setShowTalent(false);
   };
 
   return (
@@ -80,7 +90,7 @@ export default function Navbar() {
           </Link>
         </li>
         <li
-          onMouseEnter={() => openDropDown()}
+          onMouseEnter={() => openDropDown('about')}
           onMouseLeave={() => closeDropDown()}
         >
           <Link href='/about'>
@@ -96,10 +106,17 @@ export default function Navbar() {
             <NavLink>Employers</NavLink>
           </Link>
         </li>
-        <li>
+        <li
+          onMouseEnter={() => openDropDown('talent')}
+          onMouseLeave={() => closeDropDown()}
+        >
           <Link href='/talent'>
-            <NavLink>Talent</NavLink>
+            <NavLink>
+              Talent
+              <Icon icon={faAngleDown} />
+            </NavLink>
           </Link>
+          {showTalent && <DropDown items={talentItems} />}
         </li>
         <li>
           <Link href='/contact'>
@@ -111,6 +128,8 @@ export default function Navbar() {
         showSideNav={showSideNav}
         showAbout={showAbout}
         setShowAbout={setShowAbout}
+        showTalent={showTalent}
+        setShowTalent={setShowTalent}
       />
       <Hamburger showSideNav={showSideNav} setShowSideNav={setShowSideNav} />
     </Navigation>
