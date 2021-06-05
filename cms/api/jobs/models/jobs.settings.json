@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "name": "Jobs",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Location": {
+      "type": "string"
+    },
+    "Summary": {
+      "type": "text"
+    },
+    "Duties": {
+      "type": "richtext"
+    },
+    "Qualifications": {
+      "type": "richtext"
+    },
+    "Benefits": {
+      "type": "text"
+    },
+    "Contact_Email": {
+      "type": "email",
+      "default": "rebeeca.bolsover@tritan.ca"
+    },
+    "Date": {
+      "type": "date"
+    },
+    "Industry": {
+      "type": "string"
+    },
+    "Contact_Phone": {
+      "type": "string",
+      "default": "587-760-2430"
+    },
+    "Contact_Name": {
+      "type": "string",
+      "default": "Rebecca Bolsover"
+    }
+  }
+}
