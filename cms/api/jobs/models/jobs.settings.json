@@ -12,39 +12,39 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Location": {
+    "location": {
       "type": "string"
     },
-    "Summary": {
+    "summary": {
       "type": "text"
     },
-    "Duties": {
+    "duties": {
       "type": "richtext"
     },
-    "Qualifications": {
+    "qualifications": {
       "type": "richtext"
     },
-    "Benefits": {
+    "benefits": {
       "type": "text"
     },
-    "Contact_Email": {
+    "contact_email": {
       "type": "email",
       "default": "rebeeca.bolsover@tritan.ca"
     },
-    "Date": {
+    "date": {
       "type": "date"
     },
-    "Industry": {
+    "industry": {
       "type": "string"
     },
-    "Contact_Phone": {
+    "contact_phone": {
       "type": "string",
       "default": "587-760-2430"
     },
-    "Contact_Name": {
+    "contact_name": {
       "type": "string",
       "default": "Rebecca Bolsover"
     }
