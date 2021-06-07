@@ -115,24 +115,26 @@ export default function Jobs({ jobs }: IJobs) {
           image='alvaro-reyes-6avV9oeHxfo-unsplash.jpg'
           text='Current Opportunities'
         />
+        <JobSection>
+          {jobs.map(job => (
+            <JobCard key={job.id}>
+              <span className='view-more'>Click to view more</span>
+              <h2>{job.title}</h2>
+              <Icon icon={faMapMarkerAlt} />
+              <p className='location'>{job.location}</p>
+              {job.industry && <p className='industry'>{job.industry}</p>}
+              <div className='summary'>
+                <p>{trimText(job.summary, 475)}</p>
+              </div>
+              <div className='date'>
+                <span>
+                  {formatDistance(new Date(), new Date(job.date))} ago
+                </span>
+              </div>
+            </JobCard>
+          ))}
+        </JobSection>
       </section>
-      <JobSection>
-        {jobs.map(job => (
-          <JobCard key={job.id}>
-            <span className='view-more'>Click to view more</span>
-            <h2>{job.title}</h2>
-            <Icon icon={faMapMarkerAlt} />
-            <p className='location'>{job.location}</p>
-            {job.industry && <p className='industry'>{job.industry}</p>}
-            <div className='summary'>
-              <p>{trimText(job.summary, 475)}</p>
-            </div>
-            <div className='date'>
-              <span>{formatDistance(new Date(), new Date(job.date))} ago</span>
-            </div>
-          </JobCard>
-        ))}
-      </JobSection>
     </Layout>
   );
 }
