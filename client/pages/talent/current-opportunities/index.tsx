@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { formatDistance } from 'date-fns';
-import { theme as t } from '../../styles/Theme';
-import Layout from '../../components/layout';
-import ImageStrip from '../../components/ImageStrip';
-import { formatPhoneNumber, trimText } from '../../utils/general';
+import { theme as t } from '../../../styles/Theme';
+import Layout from '../../../components/layout';
+import ImageStrip from '../../../components/ImageStrip';
+import { formatPhoneNumber, trimText } from '../../../utils/general';
 
 interface IJobs {
   jobs: Job[];
