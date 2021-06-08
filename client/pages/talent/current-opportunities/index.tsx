@@ -7,25 +7,11 @@ import { theme as t } from '../../../styles/Theme';
 import Layout from '../../../components/layout';
 import ImageStrip from '../../../components/ImageStrip';
 import { trimText } from '../../../utils/general';
+import { Job as JobType } from '../../../utils/types';
 
 interface IJobs {
-  jobs: Job[];
+  jobs: JobType[];
 }
-
-type Job = {
-  id: number;
-  title: string;
-  location: string;
-  summary: string;
-  duties: string;
-  qualifications: string;
-  benefits: string;
-  date: Date;
-  industry: string;
-  contact_name: string;
-  contact_email: string;
-  contact_phone: string;
-};
 
 const JobSection = styled.div`
   padding: 5rem;
