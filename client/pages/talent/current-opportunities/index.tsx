@@ -2,10 +2,11 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { formatDistance } from 'date-fns';
+import Link from 'next/link';
 import { theme as t } from '../../../styles/Theme';
 import Layout from '../../../components/layout';
 import ImageStrip from '../../../components/ImageStrip';
-import { formatPhoneNumber, trimText } from '../../../utils/general';
+import { trimText } from '../../../utils/general';
 
 interface IJobs {
   jobs: Job[];
@@ -34,7 +35,8 @@ const JobSection = styled.div`
   }
 `;
 
-const JobCard = styled.div`
+const JobCard = styled.a`
+  display: block;
   width: 60rem;
   height: 30rem;
   border-radius: 1rem;
@@ -117,21 +119,23 @@ export default function Jobs({ jobs }: IJobs) {
         />
         <JobSection>
           {jobs.map(job => (
-            <JobCard key={job.id}>
-              <span className='view-more'>Click to view more</span>
-              <h2>{job.title}</h2>
-              <Icon icon={faMapMarkerAlt} />
-              <p className='location'>{job.location}</p>
-              {job.industry && <p className='industry'>{job.industry}</p>}
-              <div className='summary'>
-                <p>{trimText(job.summary, 475)}</p>
-              </div>
-              <div className='date'>
-                <span>
-                  {formatDistance(new Date(), new Date(job.date))} ago
-                </span>
-              </div>
-            </JobCard>
+            <Link href={`/talent/current-opportunities/${job.id}`} key={job.id}>
+              <JobCard>
+                <span className='view-more'>Click to view more</span>
+                <h2>{job.title}</h2>
+                <Icon icon={faMapMarkerAlt} />
+                <p className='location'>{job.location}</p>
+                {job.industry && <p className='industry'>{job.industry}</p>}
+                <div className='summary'>
+                  <p>{trimText(job.summary, 475)}</p>
+                </div>
+                <div className='date'>
+                  <span>
+                    {formatDistance(new Date(), new Date(job.date))} ago
+                  </span>
+                </div>
+              </JobCard>
+            </Link>
           ))}
         </JobSection>
       </section>
