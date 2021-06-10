@@ -42,7 +42,7 @@
     },
     "contact_phone": {
       "type": "string",
-      "default": "587-760-2430"
+      "default": "5877602430"
     },
     "contact_name": {
       "type": "string",
