@@ -1,63 +1,13 @@
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import { theme as t } from '../../../styles/Theme';
+import ReactMarkdown from 'react-markdown';
 import Layout from '../../../components/layout';
 import { Job as JobType } from '../../../utils/types';
+import { JobPost, Icon } from '../../../styles/jobPageStyles';
+import { formatPhoneNumber } from '../../../utils/general';
 
 interface IJob {
   job: JobType;
 }
-
-const JobPost = styled.div`
-  padding: 5rem;
-  width: 90rem;
-  margin: 0 auto;
-  border: 1px solid black;
-
-  & .title {
-    font-size: 2.4rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-  }
-
-  & .location,
-  .industry {
-    display: inline-block;
-    font-size: 1.6rem;
-    color: ${t.colors.lightEbony};
-  }
-
-  & .industry {
-    display: block;
-    margin-bottom: 2rem;
-  }
-
-  & .horizontal-rule {
-    margin: 2rem 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
-  }
-
-  & .summary {
-    h2 {
-      font-size: 1.8rem;
-      font-weight: 600;
-      margin-bottom: 2rem;
-    }
-
-    p {
-      font-size: 1.4rem;
-      line-height: 1.5;
-    }
-  }
-`;
-
-const Icon = styled(FontAwesomeIcon)`
-  display: inline-block;
-  margin-right: 1rem;
-  font-size: 1.6rem;
-  color: ${t.colors.primary};
-`;
 
 export default function Job({ job }: IJob) {
   return (
@@ -80,6 +30,29 @@ export default function Job({ job }: IJob) {
           <div className='summary'>
             <h2>Summary</h2>
             <p>{job.summary}</p>
+          </div>
+          <div className='duties'>
+            <h2>Duties</h2>
+            <ReactMarkdown>{job.duties}</ReactMarkdown>
+          </div>
+          <div className='qualifications'>
+            <h2>Qualifications</h2>
+            <ReactMarkdown>{job.qualifications}</ReactMarkdown>
+          </div>
+          <div className='benefits'>
+            <h2>Benefits</h2>
+            <p>{job.benefits}</p>
+          </div>
+          <div className='contact'>
+            <p>
+              If you are interested in taking your career to the next level,
+              please send an updated resume to {job.contact_name} at{' '}
+              <a href={`mailto:${job.contact_email}`}>{job.contact_email}</a> or
+              call{' '}
+              <a href={`tel:+1${job.contact_phone}`}>
+                {formatPhoneNumber(job.contact_phone)}
+              </a>
+            </p>
           </div>
         </JobPost>
       </section>
