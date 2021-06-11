@@ -28,7 +28,6 @@ const IndustryText = styled.div`
 
   p {
     font-size: 1.6rem;
-    letter-spacing: 1px;
     line-height: 1.5;
     color: ${t.colors.ebony};
 

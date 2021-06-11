@@ -58,7 +58,6 @@ const ContactCard = styled.div`
     font-size: 1.6rem;
     color: ${t.colors.lightEbony};
     line-height: 1.5;
-    letter-spacing: 1px;
   }
 `;
 
