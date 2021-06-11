@@ -17,7 +17,7 @@ const JobSection = styled.div`
   padding: 5rem;
 
   @media (max-width: 425px) {
-    padding: 2rem;
+    padding: 1rem;
   }
 `;
 
@@ -32,6 +32,11 @@ const JobCard = styled.a`
   position: relative;
   box-shadow: 0 5px 10px -5px;
   cursor: pointer;
+
+  @media (max-width: 425px) {
+    width: 90%;
+    height: 35rem;
+  }
 
   &:not(:last-of-type) {
     margin-bottom: 1rem;
@@ -67,6 +72,22 @@ const JobCard = styled.a`
     font-size: 1.4rem;
     margin-top: 1.5rem;
     line-height: 1.5;
+
+    @media (max-width: 425px) {
+      font-size: 1.2rem;
+      display: none;
+    }
+  }
+
+  & .summary-2 {
+    display: none;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    line-height: 1.5;
+
+    @media (max-width: 425px) {
+      display: block;
+    }
   }
 
   & .date {
@@ -83,7 +104,7 @@ const JobCard = styled.a`
     font-style: italic;
 
     @media (max-width: 425px) {
-      font-size: 0.8rem;
+      font-size: 1rem;
     }
   }
 `;
@@ -114,6 +135,9 @@ export default function Jobs({ jobs }: IJobs) {
                 {job.industry && <p className='industry'>{job.industry}</p>}
                 <div className='summary'>
                   <p>{trimText(job.summary, 475)}</p>
+                </div>
+                <div className='summary-2'>
+                  <p>{trimText(job.summary, 380)}</p>
                 </div>
                 <div className='date'>
                   <span>
