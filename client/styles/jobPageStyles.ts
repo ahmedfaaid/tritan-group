@@ -10,6 +10,15 @@ export const JobPost = styled.div`
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
 
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+
+  @media (max-width: 375px) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
   & .title {
     font-size: 2.4rem;
     font-weight: 600;
@@ -44,6 +53,10 @@ export const JobPost = styled.div`
     p {
       font-size: 1.4rem;
       line-height: 1.5;
+
+      @media (max-width: 425px) {
+        font-size: 1.2rem;
+      }
     }
   }
 
@@ -52,6 +65,10 @@ export const JobPost = styled.div`
     margin-top: 2rem;
     font-size: 1.4rem;
     line-height: 1.5;
+
+    @media (max-width: 425px) {
+      font-size: 1.2rem;
+    }
 
     h2 {
       font-size: 1.8rem;
@@ -82,6 +99,10 @@ export const JobPost = styled.div`
     font-size: 1.4rem;
     line-height: 1.5;
     margin-top: 2rem;
+
+    @media (max-width: 425px) {
+      font-size: 1.2rem;
+    }
 
     a {
       color: ${t.colors.blue};
