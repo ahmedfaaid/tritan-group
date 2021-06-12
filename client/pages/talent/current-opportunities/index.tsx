@@ -154,7 +154,12 @@ export default function Jobs({ jobs }: IJobs) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('http://localhost:1337/jobs');
+  const cmsUrl =
+    process.env.NODE_ENV === 'production'
+      ? process.env.CMS_URL
+      : 'http://localhost:1337';
+
+  const res = await fetch(`${cmsUrl}/jobs`);
 
   const jobs = await res.json();
 
