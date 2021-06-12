@@ -1,7 +1,7 @@
 {
-  "name": "cms",
+  "name": "@tritan/cms",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
@@ -25,14 +25,14 @@
     "strapi-utils": "3.6.3"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Ahmed Alhassan"
   },
   "strapi": {
     "uuid": "87411d01-fee0-4b5a-ad36-8c48f30ab344"
   },
   "engines": {
     "node": ">=10.16.0 <=14.x.x",
-    "npm": "^6.0.0"
+    "npm": ">=6.0.0"
   },
   "license": "MIT"
 }
