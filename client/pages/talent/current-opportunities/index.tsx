@@ -159,7 +159,7 @@ export async function getStaticProps() {
       ? process.env.CMS_URL
       : 'http://localhost:1337';
 
-  const res = await fetch(`${cmsUrl}/jobs`);
+  const res = await fetch(`${cmsUrl}/jobs?_sort=date:ASC`);
 
   const jobs = await res.json();
 
