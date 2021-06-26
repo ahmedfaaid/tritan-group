@@ -45,6 +45,10 @@ const JobCard = styled.a`
   &:hover {
     box-shadow: 0 2px 10px -5px;
 
+    h2 {
+      color: ${t.colors.primary};
+    }
+
     & .view-more {
       color: ${t.colors.primary};
     }
