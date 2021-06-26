@@ -13,7 +13,6 @@ interface IJob {
 
 export default function Job({ job }: IJob) {
   const router = useRouter();
-
   return (
     <Layout>
       <section>
