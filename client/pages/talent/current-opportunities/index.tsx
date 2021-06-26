@@ -15,15 +15,19 @@ interface IJobs {
 
 const JobSection = styled.div`
   padding: 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
 
   @media (max-width: 425px) {
+    display: block;
     padding: 1rem;
   }
 `;
 
 const JobCard = styled.a`
   display: block;
-  width: 60rem;
+  width: 70%;
   height: 30rem;
   border-radius: 1rem;
   padding: 3rem 2rem;
@@ -32,9 +36,23 @@ const JobCard = styled.a`
   position: relative;
   box-shadow: 0 5px 10px -5px;
   cursor: pointer;
+  transition: color 0.1s;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: 35rem;
+  }
+
+  @media (max-width: 768px) {
+    height: 40rem;
+  }
 
   @media (max-width: 425px) {
     width: 90%;
+    height: 32rem;
+  }
+
+  @media (max-width: 320px) {
     height: 35rem;
   }
 
@@ -44,6 +62,10 @@ const JobCard = styled.a`
 
   &:hover {
     box-shadow: 0 2px 10px -5px;
+
+    h2 {
+      color: ${t.colors.primary};
+    }
 
     & .view-more {
       color: ${t.colors.primary};
@@ -159,7 +181,7 @@ export async function getStaticProps() {
       ? process.env.CMS_URL
       : 'http://localhost:1337';
 
-  const res = await fetch(`${cmsUrl}/jobs`);
+  const res = await fetch(`${cmsUrl}/jobs?_sort=date:ASC`);
 
   const jobs = await res.json();
 

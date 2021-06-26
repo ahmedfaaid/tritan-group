@@ -9,6 +9,7 @@ export const JobPost = styled.div`
   border-left: 1px solid rgba(0, 0, 0, 0.1);
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
+  position: relative;
 
   @media (max-width: 768px) {
     width: 90%;
@@ -106,6 +107,23 @@ export const JobPost = styled.div`
 
     a {
       color: ${t.colors.blue};
+    }
+  }
+
+  & .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2.4rem;
+    cursor: pointer;
+    transition: color 0.1s;
+
+    &:hover {
+      color: ${t.colors.primary};
+    }
+
+    @media (max-width: 768px) {
+      color: ${t.colors.primary};
     }
   }
 `;
