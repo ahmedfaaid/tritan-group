@@ -1,4 +1,6 @@
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { useRouter } from 'next/router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
 import ReactMarkdown from 'react-markdown';
 import Layout from '../../../components/layout';
 import { Job as JobType } from '../../../utils/types';
@@ -10,10 +12,17 @@ interface IJob {
 }
 
 export default function Job({ job }: IJob) {
+  const router = useRouter();
+
   return (
     <Layout>
       <section>
         <JobPost>
+          <FontAwesomeIcon
+            icon={faTimes}
+            className='close-btn'
+            onClick={() => router.back()}
+          />
           <div className='title'>
             <h1>{job.title}</h1>
           </div>
