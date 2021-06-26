@@ -36,6 +36,7 @@ const JobCard = styled.a`
   position: relative;
   box-shadow: 0 5px 10px -5px;
   cursor: pointer;
+  transition: color 0.1s;
 
   @media (max-width: 1024px) {
     width: 100%;
