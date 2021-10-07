@@ -12,3 +12,13 @@ export type Job = {
   contact_email: string;
   contact_phone: string;
 };
+
+export type Team = {
+  id: number;
+  name: string;
+  title: string;
+  image: any;
+  phone: string;
+  email: string;
+  bio: string;
+};
