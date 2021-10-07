@@ -3,8 +3,13 @@ import styled from 'styled-components';
 import Layout from '../../components/layout';
 import ImageStrip from '../../components/ImageStrip';
 import StaffCard from '../../components/StaffCard';
-import { team } from '../../utils/team';
+// import { team } from '../../utils/team';
 import Modal from '../../components/Modal';
+import { Team } from '../../utils/types';
+
+interface ITitans {
+  team: Team[];
+}
 
 const TeamSection = styled.div`
   padding: 5rem;
@@ -16,7 +21,7 @@ const TeamSection = styled.div`
   }
 `;
 
-export default function Titans() {
+export default function Titans({ team }: ITitans) {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedTeamMember, setSelectedTeamMember] = useState(null);
 
@@ -50,4 +55,21 @@ export default function Titans() {
       />
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const cmsUrl =
+    process.env.NODE_ENV === 'production'
+      ? process.env.CMS_URL
+      : 'http://localhost:1337';
+
+  const res = await fetch(`${cmsUrl}/team`);
+
+  const team = await res.json();
+
+  return {
+    props: {
+      team
+    }
+  };
 }
