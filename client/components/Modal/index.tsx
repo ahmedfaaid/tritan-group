@@ -148,9 +148,9 @@ export default function Modal({ open, set, selectedMember }: IModalProps) {
         <CardImage>
           <img
             src={
-              selectedMember.image
-                ? selectedMember.image
-                : `https://via.placeholder.com/150/ff962d/ffffff?text=Tritan+Group`
+              process.env.NODE_ENV === 'production'
+                ? selectedMember?.image.formats.thumbnail.url
+                : `http://localhost:1337${selectedMember?.image.formats.thumbnail.url}`
             }
             alt={selectedMember.name}
           />

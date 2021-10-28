@@ -5,7 +5,7 @@ import { theme as t } from '../../styles/Theme';
 import { formatPhoneNumber } from '../../utils//general';
 
 export type Member = {
-  image: string;
+  image: any;
   name: string;
   title: string;
   email: string;
@@ -32,7 +32,7 @@ const CardImage = styled.div`
 `;
 
 export default function StaffCard({ member, setOpen }: ICardProps) {
-  const { image, name, title, email, phone, bio } = member;
+  const { image, name, title, email, phone } = member;
 
   const handleChildClick = e => e.stopPropagation();
 
@@ -42,9 +42,9 @@ export default function StaffCard({ member, setOpen }: ICardProps) {
       <CardImage>
         <img
           src={
-            image
-              ? image
-              : `https://via.placeholder.com/150/ff962d/ffffff?text=Tritan+Group`
+            process.env.NODE_ENV === 'production'
+              ? image?.formats.thumbnail.url
+              : `http://localhost:1337${image?.formats.thumbnail.url}`
           }
           alt={name}
         />
