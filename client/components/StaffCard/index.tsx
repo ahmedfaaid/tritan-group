@@ -43,7 +43,7 @@ export default function StaffCard({ member, setOpen }: ICardProps) {
         <img
           src={
             process.env.NODE_ENV === 'production'
-              ? image?.formats.small.url
+              ? image?.formats.thumbnail.url
               : `http://localhost:1337${image?.formats.thumbnail.url}`
           }
           alt={name}
