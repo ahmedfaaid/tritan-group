@@ -1,7 +1,5 @@
-import { Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
 import { Card } from '../../styles/GlobalStyles';
-import { theme as t } from '../../styles/Theme';
 import { formatPhoneNumber } from '../../utils//general';
 
 export type Member = {
