@@ -80,7 +80,7 @@ export default function Navbar() {
     <Navigation>
       <Logo>
         <Link href='/'>
-          <img src='/transparent-logo.png' alt='Tritan Group' />
+          <img src='/transparent-logo-2.png' alt='Tritan Group' />
         </Link>
       </Logo>
       <NavList>

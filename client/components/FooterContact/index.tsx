@@ -145,7 +145,7 @@ export default function FooterContact() {
           </p>
         </Address>
         <Logo>
-          <img src='/transparent-triangle-logo.png' alt='Tritan Group' />
+          <img src='/transparent-triangle-logo-2.png' alt='Tritan Group' />
         </Logo>
       </FootContact>
     </Container>
