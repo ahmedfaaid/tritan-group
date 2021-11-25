@@ -205,6 +205,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # Assets
-assets
+assets/
 
 # End of https://www.toptal.com/developers/gitignore/api/vscode,node,react,linux,windows,macos
