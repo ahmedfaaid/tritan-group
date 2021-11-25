@@ -10,8 +10,8 @@
   border-left-width: 15px;
   border-right-style: solid;
   border-right-width: 2px;
-  border-left-color: #ff962d;
-  border-right-color: #0070c0;
+  border-left-color: #b76e01;
+  border-right-color: #01037e;
   font-family: Georgia, serif;
   font-size: 1.8rem;
   line-height: 2;
@@ -34,5 +34,5 @@
 .block span {
   display: block;
   font-style: italic;
-  color: #ffaa41;
+  color: #b76e01;
 }
