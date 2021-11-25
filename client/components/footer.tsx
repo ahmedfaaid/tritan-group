@@ -15,13 +15,13 @@ const Copy = styled.div`
 `;
 
 const FooterLink = styled.a`
-  color: ${t.colors.lightEbony};
+  color: ${t.colors.ebony};
   text-decoration: underline;
   cursor: pointer;
   transition: color 0.1s;
 
   &:hover {
-    color: ${t.colors.ebony};
+    color: ${t.colors.white};
   }
 `;
 

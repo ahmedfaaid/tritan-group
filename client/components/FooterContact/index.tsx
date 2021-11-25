@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { theme as t } from '../../styles/Theme';
 
 const Container = styled.div`
-  background-color: ${t.colors.lightEbony};
+  background-color: ${t.colors.offWhite};
   position: relative;
   width: 100%;
 
@@ -25,7 +25,7 @@ const FootContact = styled.div`
     font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: ${t.colors.white};
+    color: ${t.colors.ebony};
     margin-bottom: 2rem;
   }
 
@@ -48,12 +48,13 @@ const Links = styled.div`
       text-decoration: none;
       color: ${t.colors.ebony};
       font-size: 1.2rem;
+      font-weight: 600;
       cursor: pointer;
       text-transform: uppercase;
       transition: color 0.2s;
 
       &:hover {
-        color: ${t.colors.primary};
+        color: ${t.colors.lightPrimary};
       }
     }
   }
@@ -68,16 +69,17 @@ const Address = styled.div`
     margin: 1rem 0;
     color: ${t.colors.ebony};
     font-size: 1.2rem;
+    font-weight: 600;
     text-transform: uppercase;
 
     a {
-      color: ${t.colors.white};
+      color: ${t.colors.primary};
       font-size: 1.2rem;
       cursor: pointer;
       margin-left: 0.5rem;
 
       &:hover {
-        color: ${t.colors.primary};
+        color: ${t.colors.lightPrimary};
       }
     }
   }
