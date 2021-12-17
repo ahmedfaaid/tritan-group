@@ -143,7 +143,7 @@ export default function FooterContact() {
           <p>T6J 2Y3</p>
           <p>Phone: 587-430-3790</p>
           <p>
-            Email: <a href='info@tritangroup.ca'>info@tritangroup.ca</a>
+            Email: <a href='info@tritan.ca'>info@tritan.ca</a>
           </p>
         </Address>
         <Logo>
