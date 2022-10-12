@@ -2,12 +2,12 @@
   "kind": "collectionType",
   "collectionName": "jobs",
   "info": {
-    "name": "Jobs",
+    "singularName": "job",
+    "pluralName": "jobs",
+    "displayName": "Job",
     "description": ""
   },
   "options": {
-    "increments": true,
-    "timestamps": true,
     "draftAndPublish": true
   },
   "pluginOptions": {},
@@ -19,7 +19,7 @@
       "type": "string"
     },
     "summary": {
-      "type": "text"
+      "type": "string"
     },
     "duties": {
       "type": "richtext"
@@ -28,7 +28,7 @@
       "type": "richtext"
     },
     "benefits": {
-      "type": "text"
+      "type": "string"
     },
     "contact_email": {
       "type": "email",
