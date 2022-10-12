@@ -1,13 +1,13 @@
 {
   "kind": "collectionType",
-  "collectionName": "team",
+  "collectionName": "teams",
   "info": {
-    "name": "team",
+    "singularName": "team",
+    "pluralName": "teams",
+    "displayName": "Team",
     "description": ""
   },
   "options": {
-    "increments": true,
-    "timestamps": true,
     "draftAndPublish": true
   },
   "pluginOptions": {},
@@ -19,16 +19,15 @@
       "type": "string"
     },
     "image": {
-      "model": "file",
-      "via": "related",
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {}
+        "videos",
+        "audios"
+      ]
     },
     "phone": {
       "type": "string"
