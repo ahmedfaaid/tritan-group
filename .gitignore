@@ -207,4 +207,7 @@ $RECYCLE.BIN/
 # Assets
 assets/
 
+# PG
+latest.dump
+
 # End of https://www.toptal.com/developers/gitignore/api/vscode,node,react,linux,windows,macos
