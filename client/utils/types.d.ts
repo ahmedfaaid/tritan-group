@@ -20,7 +20,12 @@ export type Team = {
   attributes: {
     name: string;
     title: string;
-    image: any;
+    image: {
+      data: {
+        id: number;
+        attributes: any;
+      };
+    };
     phone: string;
     email: string;
     bio: string;
