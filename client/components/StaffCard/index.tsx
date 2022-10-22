@@ -3,7 +3,12 @@ import { Card } from '../../styles/GlobalStyles';
 import { formatPhoneNumber } from '../../utils//general';
 
 export type Member = {
-  image: any;
+  image: {
+    data: {
+      id: number;
+      attributes: any;
+    };
+  };
   name: string;
   title: string;
   email: string;
@@ -41,8 +46,8 @@ export default function StaffCard({ member, setOpen }: ICardProps) {
         <img
           src={
             process.env.NODE_ENV === 'production'
-              ? image?.formats.thumbnail.url
-              : `http://localhost:1337${image?.formats.thumbnail.url}`
+              ? image?.data.attributes.formats.thumbnail.url
+              : `http://localhost:1337${image?.data.attributes.formats.thumbnail.url}`
           }
           alt={name}
         />
