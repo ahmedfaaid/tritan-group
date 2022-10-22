@@ -58,10 +58,7 @@ export default function Titans({ team }: ITitans) {
 }
 
 export async function getStaticProps() {
-  const cmsUrl =
-    process.env.NODE_ENV === 'production'
-      ? process.env.CMS_URL
-      : 'http://localhost:1337';
+  const cmsUrl = process.env.CMS_URL;
 
   const res = await fetch(`${cmsUrl}/api/teams?populate[0]=image`);
 

@@ -71,10 +71,7 @@ export default function Job({ job }: IJob) {
 }
 
 export async function getStaticPaths() {
-  const cmsUrl =
-    process.env.NODE_ENV === 'production'
-      ? process.env.CMS_URL
-      : 'http://localhost:1337';
+  const cmsUrl = process.env.CMS_URL;
 
   const res = await fetch(`${cmsUrl}/api/jobs`);
 
@@ -90,10 +87,7 @@ export async function getStaticPaths() {
 
 // This also gets called at build time
 export async function getStaticProps({ params }) {
-  const cmsUrl =
-    process.env.NODE_ENV === 'production'
-      ? process.env.CMS_URL
-      : 'http://localhost:1337';
+  const cmsUrl = process.env.CMS_URL;
 
   const res = await fetch(`${cmsUrl}/api/jobs/${params.id}`);
   const job = await res.json();
