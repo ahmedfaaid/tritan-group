@@ -3,17 +3,20 @@ import { Card } from '../../styles/GlobalStyles';
 import { formatPhoneNumber } from '../../utils//general';
 
 export type Member = {
-  image: {
-    data: {
-      id: number;
-      attributes: any;
+  id: number;
+  attributes: {
+    image: {
+      data: {
+        id: number;
+        attributes: any;
+      };
     };
+    name: string;
+    title: string;
+    email: string;
+    phone: string;
+    bio: string;
   };
-  name: string;
-  title: string;
-  email: string;
-  phone: string;
-  bio: string;
 };
 
 interface ICardProps {
@@ -35,7 +38,7 @@ const CardImage = styled.div`
 `;
 
 export default function StaffCard({ member, setOpen }: ICardProps) {
-  const { image, name, title, email, phone } = member;
+  const { image, name, title, email, phone } = member.attributes;
 
   const handleChildClick = e => e.stopPropagation();
 
