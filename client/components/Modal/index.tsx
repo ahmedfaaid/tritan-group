@@ -126,7 +126,7 @@ const CardImage = styled.div`
 
 export default function Modal({ open, set, selectedMember }: IModalProps) {
   const modalRef = useRef();
-  const teamMember = selectedMember.attributes;
+  const teamMember = selectedMember?.attributes;
 
   const handleClose: MouseEventHandler<HTMLDivElement> = e => {
     if (modalRef.current === e.target) {
