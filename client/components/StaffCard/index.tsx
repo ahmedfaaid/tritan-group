@@ -42,6 +42,8 @@ export default function StaffCard({ member, setOpen }: ICardProps) {
 
   const handleChildClick = e => e.stopPropagation();
 
+  console.log({ member });
+
   return (
     <Card onClick={() => setOpen()}>
       <span className='view-more'>Click to view more</span>
