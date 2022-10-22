@@ -1,11 +1,11 @@
-import { useRouter } from 'next/router';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useRouter } from 'next/router';
 import ReactMarkdown from 'react-markdown';
 import Layout from '../../../components/layout';
-import { Job as JobType } from '../../../utils/types';
-import { JobPost, Icon } from '../../../styles/jobPageStyles';
+import { Icon, JobPost } from '../../../styles/jobPageStyles';
 import { formatPhoneNumber } from '../../../utils/general';
+import { Job as JobType } from '../../../utils/types';
 
 interface IJob {
   job: JobType;
@@ -23,42 +23,44 @@ export default function Job({ job }: IJob) {
             onClick={() => router.back()}
           />
           <div className='title'>
-            <h1>{job.title}</h1>
+            <h1>{job.attributes.title}</h1>
           </div>
-          {job.industry && (
+          {job.attributes.industry && (
             <div className='industry'>
-              <p>{job.industry}</p>
+              <p>{job.attributes.industry}</p>
             </div>
           )}
           <div>
             <Icon icon={faMapMarkerAlt} />
-            <p className='location'>{job.location}</p>
+            <p className='location'>{job.attributes.location}</p>
           </div>
           <div className='horizontal-rule' />
           <div className='summary'>
             <h2>Summary</h2>
-            <p>{job.summary}</p>
+            <p>{job.attributes.summary}</p>
           </div>
           <div className='duties'>
             <h2>Duties</h2>
-            <ReactMarkdown>{job.duties}</ReactMarkdown>
+            <ReactMarkdown>{job.attributes.duties}</ReactMarkdown>
           </div>
           <div className='qualifications'>
             <h2>Qualifications</h2>
-            <ReactMarkdown>{job.qualifications}</ReactMarkdown>
+            <ReactMarkdown>{job.attributes.qualifications}</ReactMarkdown>
           </div>
           <div className='benefits'>
             <h2>Benefits</h2>
-            <p>{job.benefits}</p>
+            <p>{job.attributes.benefits}</p>
           </div>
           <div className='contact'>
             <p>
               If you are interested in taking your career to the next level,
-              please send an updated resume to {job.contact_name} at{' '}
-              <a href={`mailto:${job.contact_email}`}>{job.contact_email}</a> or
-              call{' '}
-              <a href={`tel:+1${job.contact_phone}`}>
-                {formatPhoneNumber(job.contact_phone)}
+              please send an updated resume to {job.attributes.contact_name} at{' '}
+              <a href={`mailto:${job.attributes.contact_email}`}>
+                {job.attributes.contact_email}
+              </a>{' '}
+              or call{' '}
+              <a href={`tel:+1${job.attributes.contact_phone}`}>
+                {formatPhoneNumber(job.attributes.contact_phone)}
               </a>
             </p>
           </div>
@@ -74,11 +76,11 @@ export async function getStaticPaths() {
       ? process.env.CMS_URL
       : 'http://localhost:1337';
 
-  const res = await fetch(`${cmsUrl}/jobs`);
+  const res = await fetch(`${cmsUrl}/api/jobs`);
 
   const jobs = await res.json();
 
-  const paths = jobs.map(job => ({
+  const paths = jobs.data.map(job => ({
     params: { id: job.id.toString() }
   }));
 
@@ -93,8 +95,8 @@ export async function getStaticProps({ params }) {
       ? process.env.CMS_URL
       : 'http://localhost:1337';
 
-  const res = await fetch(`${cmsUrl}/jobs/${params.id}`);
+  const res = await fetch(`${cmsUrl}/api/jobs/${params.id}`);
   const job = await res.json();
 
-  return { props: { job } };
+  return { props: { job: job.data } };
 }
