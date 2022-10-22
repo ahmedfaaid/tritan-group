@@ -42,7 +42,7 @@ export default function Titans({ team }: ITitans) {
           {team.map(t => (
             <StaffCard
               key={t.id}
-              member={t.attributes}
+              member={t}
               setOpen={() => viewTeamMember(t)}
             />
           ))}

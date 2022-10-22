@@ -126,6 +126,7 @@ const CardImage = styled.div`
 
 export default function Modal({ open, set, selectedMember }: IModalProps) {
   const modalRef = useRef();
+  const teamMember = selectedMember.attributes;
 
   const handleClose: MouseEventHandler<HTMLDivElement> = e => {
     if (modalRef.current === e.target) {
@@ -149,25 +150,24 @@ export default function Modal({ open, set, selectedMember }: IModalProps) {
           <img
             src={
               process.env.NODE_ENV === 'production'
-                ? selectedMember?.image.data.attributes.formats.thumbnail.url
-                : `http://localhost:1337${selectedMember?.image.data.attributes.formats.thumbnail.url}`
+                ? teamMember?.image.data.attributes.formats.thumbnail.url
+                : `http://localhost:1337${teamMember?.image.data.attributes.formats.thumbnail.url}`
             }
-            alt={selectedMember.name}
+            alt={teamMember.name}
           />
         </CardImage>
-        <h5>{selectedMember.name}</h5>
-        <p>{selectedMember.title}</p>
+        <h5>{teamMember.name}</h5>
+        <p>{teamMember.title}</p>
         <p>
           Phone:{' '}
-          <a href={`tel:+1${selectedMember.phone}`}>
-            {formatPhoneNumber(selectedMember.phone)}
+          <a href={`tel:+1${teamMember.phone}`}>
+            {formatPhoneNumber(teamMember.phone)}
           </a>
         </p>
         <p>
-          Email:{' '}
-          <a href={`mailto:${selectedMember.email}`}>{selectedMember.email}</a>
+          Email: <a href={`mailto:${teamMember.email}`}>{teamMember.email}</a>
         </p>
-        <p className='bio'>{selectedMember.bio}</p>
+        <p className='bio'>{teamMember.bio}</p>
       </Content>
     </Wrapper>
   );
