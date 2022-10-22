@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import Layout from '../../components/layout';
 import ImageStrip from '../../components/ImageStrip';
+import Layout from '../../components/layout';
 import StaffCard from '../../components/StaffCard';
 // import { team } from '../../utils/team';
 import Modal from '../../components/Modal';
@@ -30,6 +30,8 @@ export default function Titans({ team }: ITitans) {
     setModalOpen(true);
   };
 
+  console.log(team);
+
   return (
     <Layout page='Our Titans'>
       <section>
@@ -42,7 +44,7 @@ export default function Titans({ team }: ITitans) {
           {team.map(t => (
             <StaffCard
               key={t.id}
-              member={t}
+              member={t.attributes}
               setOpen={() => viewTeamMember(t)}
             />
           ))}
@@ -63,13 +65,15 @@ export async function getStaticProps() {
       ? process.env.CMS_URL
       : 'http://localhost:1337';
 
-  const res = await fetch(`${cmsUrl}/team`);
+  const res = await fetch(`${cmsUrl}/api/teams?populate[0]=image`);
 
   const team = await res.json();
 
+  console.log(team.data);
+
   return {
     props: {
-      team
+      team: team.data
     }
   };
 }
