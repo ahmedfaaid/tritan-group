@@ -30,8 +30,6 @@ export default function Titans({ team }: ITitans) {
     setModalOpen(true);
   };
 
-  console.log(team);
-
   return (
     <Layout page='Our Titans'>
       <section>
@@ -68,8 +66,6 @@ export async function getStaticProps() {
   const res = await fetch(`${cmsUrl}/api/teams?populate[0]=image`);
 
   const team = await res.json();
-
-  console.log(team.data);
 
   return {
     props: {
