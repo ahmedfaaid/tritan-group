@@ -19,7 +19,7 @@
       "type": "string"
     },
     "summary": {
-      "type": "string"
+      "type": "text"
     },
     "duties": {
       "type": "richtext"
@@ -28,7 +28,7 @@
       "type": "richtext"
     },
     "benefits": {
-      "type": "string"
+      "type": "text"
     },
     "contact_email": {
       "type": "email",
