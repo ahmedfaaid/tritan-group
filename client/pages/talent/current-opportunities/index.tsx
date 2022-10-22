@@ -1,11 +1,11 @@
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { formatDistance } from 'date-fns';
 import Link from 'next/link';
-import { theme as t } from '../../../styles/Theme';
-import Layout from '../../../components/layout';
+import styled from 'styled-components';
 import ImageStrip from '../../../components/ImageStrip';
+import Layout from '../../../components/layout';
+import { theme as t } from '../../../styles/Theme';
 import { trimText } from '../../../utils/general';
 import { Job as JobType } from '../../../utils/types';
 
@@ -151,19 +151,22 @@ export default function Jobs({ jobs }: IJobs) {
             <Link href={`/talent/current-opportunities/${job.id}`} key={job.id}>
               <JobCard>
                 <span className='view-more'>Click to view more</span>
-                <h2>{job.title}</h2>
+                <h2>{job.attributes.title}</h2>
                 <Icon icon={faMapMarkerAlt} />
-                <p className='location'>{job.location}</p>
-                {job.industry && <p className='industry'>{job.industry}</p>}
+                <p className='location'>{job.attributes.location}</p>
+                {job.attributes.industry && (
+                  <p className='industry'>{job.attributes.industry}</p>
+                )}
                 <div className='summary'>
-                  <p>{trimText(job.summary, 475)}</p>
+                  <p>{trimText(job.attributes.summary, 475)}</p>
                 </div>
                 <div className='summary-2'>
-                  <p>{trimText(job.summary, 380)}</p>
+                  <p>{trimText(job.attributes.summary, 380)}</p>
                 </div>
                 <div className='date'>
                   <span>
-                    {formatDistance(new Date(), new Date(job.date))} ago
+                    {formatDistance(new Date(), new Date(job.attributes.date))}{' '}
+                    ago
                   </span>
                 </div>
               </JobCard>
@@ -181,13 +184,13 @@ export async function getStaticProps() {
       ? process.env.CMS_URL
       : 'http://localhost:1337';
 
-  const res = await fetch(`${cmsUrl}/jobs?_sort=date:DESC`);
+  const res = await fetch(`${cmsUrl}/api/jobs?sort=date:desc`);
 
   const jobs = await res.json();
 
   return {
     props: {
-      jobs
+      jobs: jobs.data
     }
   };
 }
