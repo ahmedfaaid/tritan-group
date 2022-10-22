@@ -179,10 +179,7 @@ export default function Jobs({ jobs }: IJobs) {
 }
 
 export async function getStaticProps() {
-  const cmsUrl =
-    process.env.NODE_ENV === 'production'
-      ? process.env.CMS_URL
-      : 'http://localhost:1337';
+  const cmsUrl = process.env.CMS_URL;
 
   const res = await fetch(`${cmsUrl}/api/jobs?sort=date:desc`);
 
