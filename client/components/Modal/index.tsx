@@ -1,3 +1,5 @@
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   Dispatch,
   MouseEventHandler,
@@ -6,11 +8,9 @@ import {
   useRef
 } from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { theme as t } from '../../styles/Theme';
-import { Member } from '../StaffCard';
 import { formatPhoneNumber } from '../../utils/general';
+import { Member } from '../StaffCard';
 
 interface IModalProps {
   open: boolean;
@@ -149,8 +149,8 @@ export default function Modal({ open, set, selectedMember }: IModalProps) {
           <img
             src={
               process.env.NODE_ENV === 'production'
-                ? selectedMember?.image.formats.thumbnail.url
-                : `http://localhost:1337${selectedMember?.image.formats.thumbnail.url}`
+                ? selectedMember?.image.data.attributes.formats.thumbnail.url
+                : `http://localhost:1337${selectedMember?.image.data.attributes.formats.thumbnail.url}`
             }
             alt={selectedMember.name}
           />
