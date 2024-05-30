@@ -147,31 +147,41 @@ export default function Jobs({ jobs }: IJobs) {
           text='Current Opportunities'
         />
         <JobSection>
-          {jobs.map(job => (
-            <Link href={`/talent/current-opportunities/${job.id}`} key={job.id}>
-              <JobCard>
-                <span className='view-more'>Click to view more</span>
-                <h2>{job.attributes.title}</h2>
-                <Icon icon={faMapMarkerAlt} />
-                <p className='location'>{job.attributes.location}</p>
-                {job.attributes.industry && (
-                  <p className='industry'>{job.attributes.industry}</p>
-                )}
-                <div className='summary'>
-                  <p>{trimText(job.attributes.summary, 475)}</p>
-                </div>
-                <div className='summary-2'>
-                  <p>{trimText(job.attributes.summary, 380)}</p>
-                </div>
-                <div className='date'>
-                  <span>
-                    {formatDistance(new Date(), new Date(job.attributes.date))}{' '}
-                    ago
-                  </span>
-                </div>
-              </JobCard>
-            </Link>
-          ))}
+          {jobs ? (
+            jobs.map(job => (
+              <Link
+                href={`/talent/current-opportunities/${job.id}`}
+                key={job.id}
+              >
+                <JobCard>
+                  <span className='view-more'>Click to view more</span>
+                  <h2>{job.attributes.title}</h2>
+                  <Icon icon={faMapMarkerAlt} />
+                  <p className='location'>{job.attributes.location}</p>
+                  {job.attributes.industry && (
+                    <p className='industry'>{job.attributes.industry}</p>
+                  )}
+                  <div className='summary'>
+                    <p>{trimText(job.attributes.summary, 475)}</p>
+                  </div>
+                  <div className='summary-2'>
+                    <p>{trimText(job.attributes.summary, 380)}</p>
+                  </div>
+                  <div className='date'>
+                    <span>
+                      {formatDistance(
+                        new Date(),
+                        new Date(job.attributes.date)
+                      )}{' '}
+                      ago
+                    </span>
+                  </div>
+                </JobCard>
+              </Link>
+            ))
+          ) : (
+            <p>No job listings...</p>
+          )}
         </JobSection>
       </section>
     </Layout>
