@@ -138,6 +138,15 @@ const Icon = styled(FontAwesomeIcon)`
   color: ${t.colors.primary};
 `;
 
+const NoJobSection = styled.div`
+  padding: 5rem;
+
+  & p {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+`;
+
 export default function Jobs({ jobs }: IJobs) {
   return (
     <Layout page='Current Opportunities'>
@@ -146,9 +155,9 @@ export default function Jobs({ jobs }: IJobs) {
           image='alvaro-reyes-6avV9oeHxfo-unsplash.jpg'
           text='Current Opportunities'
         />
-        <JobSection>
-          {jobs ? (
-            jobs.map(job => (
+        {jobs && jobs.length > 0 ? (
+          <JobSection>
+            {jobs.map(job => (
               <Link
                 href={`/talent/current-opportunities/${job.id}`}
                 key={job.id}
@@ -178,11 +187,13 @@ export default function Jobs({ jobs }: IJobs) {
                   </div>
                 </JobCard>
               </Link>
-            ))
-          ) : (
-            <p>No job listings...</p>
-          )}
-        </JobSection>
+            ))}
+          </JobSection>
+        ) : (
+          <NoJobSection>
+            <p>There are no current opportunities</p>
+          </NoJobSection>
+        )}
       </section>
     </Layout>
   );
